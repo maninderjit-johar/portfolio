@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100lvh;
+}
+
+body {
+  background: linear-gradient(
+    169deg,
+    rgba(0, 0, 0, 1) 18%,
+    rgba(21, 102, 115, 1) 70%
+  );
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+p {
+  color: #fff;
+}
+
+.float-animation {
+  animation: float 5s ease-in-out infinite;
+}
+
+div button {
+  @apply px-4 py-2 bg-customTeal rounded-full text-white font-semibold flex items-center;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}

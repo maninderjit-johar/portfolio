@@ -1,0 +1,42 @@
+---
+import DeveloperImg from "../images/dev.svg";
+import { Image } from "astro:assets";
+import GitHub from "../images/github.svg";
+import LinkedIN from "../images/linkedin.svg";
+---
+
+<section class="container mx-auto h-lvh">
+  <div class="flex justify-between items-center">
+    <div class="flex justify-center items-start flex-col h-lvh -mt-10 w-1/2">
+      <p class="text-4xl font-semibold">Hi, I am Mani Johar</p>
+      <p class="text-5xl font-semibold mt-2">Full Stack Developer</p>
+      <p class="mt-2">
+        <p class="mt-2">
+          Innovative developer with over 5 years of experience blending
+          engineering expertise with a passion for creating user-friendly and
+          scalable applications.
+        </p>
+      </p>
+
+      <div class="flex gap-4 mt-6">
+        <button> Resume </button>
+        <button>
+          <!-- <Image width={48} src={GitHub} alt="Github" class="inline-block" /> -->
+          GitHub
+        </button>
+        <button>
+          <!-- <Image width={24} src={LinkedIN} alt="Github" class="inline-block" /> -->
+          LinkedIn</button
+        >
+      </div>
+    </div>
+    <div class="flex h-lvh items-center" id="#desk">
+      <Image
+        src={DeveloperImg}
+        alt="Developer Programming"
+        width={500}
+        class="float-animation"
+      />
+    </div>
+  </div>
+</section>
