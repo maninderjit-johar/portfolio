@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import Logo from "../images/logo.svg";
+import Logo from "../images/LOGO.png";
 ---
 
 <nav
@@ -15,8 +15,11 @@ import Logo from "../images/logo.svg";
       </a>
     </div>
     <!-- Navigation Links -->
-    <div class="hidden md:flex space-x-8 py-4 px-12 bg-customTeal rounded-full">
-      <a href="#home" class="text-white hover:font-bold">Home</a>
+    <div
+      class="hidden md:flex space-x-8 py-4 px-12 bg-black rounded-full middle-nav transition-all ease-in delay-150"
+    >
+      <a href="
+      #home" class="text-white hover:font-bold"> Home </a>
       <a href="#about" class="text-white hover:font-bold">About</a>
       <a href="#about" class="text-white hover:font-bold">Work</a>
       <a href="#about" class="text-white hover:font-bold">Projects</a>
@@ -69,28 +72,40 @@ import Logo from "../images/logo.svg";
       </div>
     </div>
   </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const navbar = document.getElementById("navbar");
+      const heroSection = document.querySelector(".hero-section");
+      const middleNav = document.querySelector(".middle-nav");
+
+      // Toggle mobile menu
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      // Change navbar style on scroll
+      window.addEventListener("scroll", () => {
+        // Calculate the halfway point of the hero section
+        const halfwayHero = heroSection.clientHeight / 3;
+
+        if (window.scrollY > halfwayHero) {
+          // Add classes for background, border, and text color
+          navbar.classList.remove("bg-transparent");
+          navbar.classList.add("nav-glass", "text-white");
+          middleNav.classList.add("bg-customTeal");
+        } else {
+          // Remove those classes when not past the point
+          //navbar.classList.add("bg-transparent");
+          navbar.classList.remove("nav-glass", "text-white");
+          middleNav.classList.remove("bg-customTeal");
+        }
+      });
+
+      // Optional: Implement logic to highlight the active link based on the scroll position
+      // This part is more complex and depends on your page structure
+    });
+  </script>
 </nav>
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const menuBtn = document.getElementById("menu-btn");
-    const mobileMenu = document.getElementById("mobile-menu");
-    const navbar = document.getElementById("navbar");
-
-    // Toggle mobile menu
-    menuBtn.addEventListener("click", () => {
-      mobileMenu.classList.toggle("hidden");
-    });
-
-    // Change navbar style on scroll
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 100) {
-        navbar.classList.add("bg-gray-900", "text-white");
-      } else {
-        navbar.classList.remove("bg-gray-900", "text-white");
-      }
-    });
-
-    // Optional: Implement logic to highlight the active link based on the scroll position
-    // This part is more complex and depends on your page structure
-  });
-</script>

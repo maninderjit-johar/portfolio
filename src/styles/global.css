@@ -13,13 +13,23 @@ html {
 }
 
 body {
-  background: linear-gradient(
-    169deg,
-    rgba(0, 0, 0, 1) 18%,
-    rgba(21, 102, 115, 1) 70%
-  );
+  background: #000;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+nav {
+  z-index: 100;
+}
+
+.hero-section {
+  background: linear-gradient(
+    160deg,
+    rgba(0, 0, 0, 1) 15%,
+    rgba(32, 178, 170, 1) 29%,
+
+    rgba(0, 0, 0, 1) 62%
+  );
 }
 
 p {
@@ -31,7 +41,37 @@ p {
 }
 
 div button {
-  @apply px-4 py-2 bg-customTeal rounded-full text-white font-semibold flex items-center;
+  @apply px-4 py-2 bg-customTeal rounded-full text-white font-semibold flex items-center hover:font-bold transition-all;
+}
+
+.exp-section {
+  background: linear-gradient(
+    169deg,
+    rgba(0, 0, 0, 1) 57%,
+    rgba(27, 124, 118, 1) 94%
+  );
+  /* height: 100lvh; */
+}
+
+.nav-glass {
+  background: rgba(255, 255, 255, 0.22);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.glass {
+  background: #167f78;
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.vertical {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
 }
 
 @keyframes float {

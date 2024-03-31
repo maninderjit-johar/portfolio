@@ -1,0 +1,14 @@
+---
+import mongo from "../../images/databases/mongodb.svg";
+import dynamo from "../../images/databases/aws-dynamodb.svg";
+import postgre from "../../images/databases/postgresql.svg";
+import mysql from "../../images/databases/mysql.svg";
+import TechIcon from "./TechIcon.astro";
+---
+
+<div class="flex gap-8 flex-wrap">
+  <TechIcon title={"MongoDB"} url={mongo} />
+  <TechIcon title={"DynamoDB"} url={dynamo} />
+  <TechIcon title={"PostgreSQL"} url={postgre} />
+  <TechIcon title={"MySQL"} url={mysql} />
+</div>
