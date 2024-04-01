@@ -4,6 +4,7 @@ import { Image } from "astro:assets";
 import gym from "../../images/gym.svg";
 import cricket from "../../images/cricket.svg";
 import hiking from "../../images/hiking.svg";
+import ryerson from "../../images/TMU.svg";
 ---
 
 <section class="exp-section px-10 mx-auto -mt-28" id="tool">
@@ -45,44 +46,50 @@ import hiking from "../../images/hiking.svg";
         </p>
       </div>
 
-      <!-- Education -->
+      <div class="flex gap-10 items-center justify-center">
+        <!-- Education -->
 
-      <div class="flex flex-col items-center gap-4">
-        <p class="text-white font-bold uppercase mt-6 text-xl">Education</p>
-        <div class="flex gap-4">
-          <div class="flex flex-col items-center py-1 px-2 bg-white rounded-lg">
-            <Image src={gym} alt="Gym" width={50} />
-            <p class="text-customTeal font-semibold uppercase">Gym</p>
-          </div>
-          <div class="flex flex-col items-center py-1 px-2 bg-white rounded-lg">
-            <Image src={cricket} alt="Gym" width={50} />
-            <p class="text-customTeal font-semibold uppercase">Cricket</p>
-          </div>
-
-          <div class="flex flex-col items-center py-1 px-2 bg-white rounded-lg">
-            <Image src={hiking} alt="Gym" width={50} />
-            <p class="text-customTeal font-semibold uppercase">Hiking</p>
+        <div class="flex flex-col items-center gap-4">
+          <p class="text-white font-bold uppercase mt-6 text-xl">Education</p>
+          <div class="flex gap-4">
+            <div class="flex items-center py-1 px-2 bg-white rounded-lg">
+              <Image src={ryerson} alt="Ryerson" width={100} />
+              <div class="flex flex-col">
+                <p class="text-black font-semibold">Bachelor of Engineering</p>
+                <p class="text-black font-semibold">2018</p>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- HOBBIES-->
+        <div
+          class="h-[75px] min-h-[1em] w-0.5 bg-neutral-100 dark:bg-white opacity-55 -mb-16"
+        >
+        </div>
+        <!-- HOBBIES-->
 
-      <div class="flex flex-col items-center gap-4">
-        <p class="text-white font-bold uppercase mt-6 text-xl">Hobbies</p>
-        <div class="flex gap-4">
-          <div class="flex flex-col items-center py-1 px-2 bg-white rounded-lg">
-            <Image src={gym} alt="Gym" width={50} />
-            <p class="text-customTeal font-semibold uppercase">Gym</p>
-          </div>
-          <div class="flex flex-col items-center py-1 px-2 bg-white rounded-lg">
-            <Image src={cricket} alt="Gym" width={50} />
-            <p class="text-customTeal font-semibold uppercase">Cricket</p>
-          </div>
+        <div class="flex flex-col items-center gap-4">
+          <p class="text-white font-bold uppercase mt-6 text-xl">Hobbies</p>
+          <div class="flex gap-4">
+            <div
+              class="flex flex-col items-center py-1 px-2 bg-white rounded-lg"
+            >
+              <Image src={gym} alt="Gym" width={50} />
+              <p class="text-customTeal font-semibold uppercase">Gym</p>
+            </div>
+            <div
+              class="flex flex-col items-center py-1 px-2 bg-white rounded-lg"
+            >
+              <Image src={cricket} alt="Gym" width={50} />
+              <p class="text-customTeal font-semibold uppercase">Cricket</p>
+            </div>
 
-          <div class="flex flex-col items-center py-1 px-2 bg-white rounded-lg">
-            <Image src={hiking} alt="Gym" width={50} />
-            <p class="text-customTeal font-semibold uppercase">Hiking</p>
+            <div
+              class="flex flex-col items-center py-1 px-2 bg-white rounded-lg"
+            >
+              <Image src={hiking} alt="Gym" width={50} />
+              <p class="text-customTeal font-semibold uppercase">Hiking</p>
+            </div>
           </div>
         </div>
       </div>
