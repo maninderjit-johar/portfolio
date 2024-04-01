@@ -32,6 +32,24 @@ nav {
   );
 }
 
+.exp-section {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 1) 23%,
+    rgba(27, 124, 118, 1) 92%
+  );
+  /* height: 100lvh; */
+}
+
+.work-section {
+  background: linear-gradient(
+    180deg,
+    rgba(27, 124, 118, 1) 15%,
+    rgba(0, 0, 0, 1) 57%
+  );
+  height: 100lvh;
+}
+
 p {
   color: #fff;
 }
@@ -42,15 +60,6 @@ p {
 
 div button {
   @apply px-4 py-2 bg-customTeal rounded-full text-white font-semibold flex items-center hover:font-bold transition-all;
-}
-
-.exp-section {
-  background: linear-gradient(
-    169deg,
-    rgba(0, 0, 0, 1) 57%,
-    rgba(27, 124, 118, 1) 94%
-  );
-  /* height: 100lvh; */
 }
 
 .nav-glass {
