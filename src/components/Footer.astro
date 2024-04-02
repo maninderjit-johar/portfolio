@@ -1,4 +1,9 @@
 ---
+import { Image } from "astro:assets";
+
+import github from "../images/vCtrl/github-1.svg";
+import linkedin from "../images/linkedin-1.svg";
+import outlook from "../images/outlook.svg";
 const year = new Date();
 const curr_year = year.getFullYear();
 ---
@@ -17,9 +22,21 @@ const curr_year = year.getFullYear();
   >
     <p>Maninderjit Johar | Full Stack Developer</p>
     <div class="flex gap-4 opacity-80 font-semibold">
-      <p>GH</p>
-      <p>LI</p>
-      <p>Email</p>
+      <a
+        href="mailto:maninderjit.johar@outlook.com"
+        class="text-white"
+        target="_blank"><Image src={outlook} width={30} alt="Email" /></a
+      >
+      <a
+        href="https://github.com/maninderjit-johar"
+        class="text-white hover:text-customTeal"
+        target="_blank"><Image src={github} width={30} alt="Github" /></a
+      >
+      <a
+        href="https://www.linkedin.com/in/manijohar/"
+        class="text-white hover:text-customTeal"
+        target="_blank"><Image src={linkedin} width={30} alt="LinkedIn" /></a
+      >
     </div>
   </div>
 </footer>

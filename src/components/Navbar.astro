@@ -1,6 +1,9 @@
 ---
 import { Image } from "astro:assets";
 import Logo from "../images/LOGO.png";
+import github from "../images/vCtrl/github-1.svg";
+import linkedin from "../images/linkedin-1.svg";
+import outlook from "../images/outlook.svg";
 ---
 
 <nav
@@ -24,16 +27,25 @@ import Logo from "../images/LOGO.png";
       >
       <a href="#about" class="text-white hover:font-bold nav-link">About</a>
     </div>
-    <div class="hidden md:flex space-x-4">
-      <a href="https://github.com" class="text-white hover:text-customTeal"
-        >GH</a
+    <div class="hidden md:flex space-x-2">
+      <a
+        href="mailto:maninderjit.johar@outlook.com"
+        class="text-white"
+        target="_blank"><Image src={outlook} width={30} alt="Email" /></a
       >
-      <a href="https://linkedin.com" class="text-white hover:text-customTeal"
-        >LI</a
+      <a
+        href="https://github.com/maninderjit-johar"
+        class="text-white hover:text-customTeal"
+        target="_blank"><Image src={github} width={30} alt="Github" /></a
+      >
+      <a
+        href="https://www.linkedin.com/in/manijohar/"
+        class="text-white hover:text-customTeal"
+        target="_blank"><Image src={linkedin} width={30} alt="LinkedIn" /></a
       >
     </div>
     <!-- Hamburger Menu -->
-    <button id="menu-btn" class="md:hidden text-white">
+    <button id="menu-btn" class="md:hidden text-white rounded-full">
       <svg
         class="w-5 h-5"
         aria-hidden="true"
@@ -54,19 +66,38 @@ import Logo from "../images/LOGO.png";
       id="mobile-menu"
       class="hidden absolute top-full left-0 w-full bg-gray-900 p-4"
     >
-      <a href="#home" class="block text-white hover:text-customTeal">Home</a>
-      <a href="#about" class="mt-4 block text-white hover:text-customTeal"
-        >About</a
+      <a href="#home" class="block text-white hover:text-customTeal nav-link"
+        >Home</a
       >
-      <a href="#contact" class="mt-4 block text-white hover:text-customTeal"
-        >Contact</a
+      <a
+        href="#tools"
+        class="mt-2 block text-white hover:text-customTeal nav-link">Tools</a
       >
+      <a
+        href="#work"
+        class="mt-2 block text-white hover:text-customTeal nav-link"
+        >Experiences</a
+      >
+      <a
+        href="#about"
+        class="mt-2 block text-white hover:text-customTeal nav-link">About</a
+      >
+
       <div class="flex mt-4 gap-4">
-        <a href="https://github.com" class="text-white hover:text-customTeal"
-          >GH</a
+        <a
+          href="mailto:maninderjit.johar@outlook.com"
+          class="text-white"
+          target="_blank"><Image src={outlook} width={30} alt="Email" /></a
         >
-        <a href="https://linkedin.com" class="text-white hover:text-customTeal"
-          >LI</a
+        <a
+          href="https://github.com/maninderjit-johar"
+          class="text-white hover:text-customTeal"
+          target="_blank"><Image src={github} width={30} alt="Github" /></a
+        >
+        <a
+          href="https://www.linkedin.com/in/manijohar/"
+          class="text-white hover:text-customTeal"
+          target="_blank"><Image src={linkedin} width={30} alt="LinkedIn" /></a
         >
       </div>
     </div>
