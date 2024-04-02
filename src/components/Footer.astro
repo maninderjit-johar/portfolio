@@ -1,0 +1,25 @@
+---
+const year = new Date();
+const curr_year = year.getFullYear();
+---
+
+<footer class="footer flex flex-col gap-4 pb-4 justify-center" id="footer">
+  <!-- page information -->
+  <div class="flex justify-center">
+    <p class="mt-10 font-semibold opacity-70 text-center md:text-left">
+      Developed with <span>Astro</span>, styled using <span>Tailwind</span> and deployed
+      on <span>Vercel</span>
+    </p>
+  </div>
+  <!-- contact information -->
+  <div
+    class="flex md:justify-around gap-2 md:gap-0 opacity-80 font-semibold flex-wrap md:flex-nowrap flex-col md:flex-row items-center md:items-start"
+  >
+    <p>Maninderjit Johar | Full Stack Developer</p>
+    <div class="flex gap-4 opacity-80 font-semibold">
+      <p>GH</p>
+      <p>LI</p>
+      <p>Email</p>
+    </div>
+  </div>
+</footer>

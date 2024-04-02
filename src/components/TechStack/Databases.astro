@@ -6,7 +6,9 @@ import mysql from "../../images/databases/mysql.svg";
 import TechIcon from "./TechIcon.astro";
 ---
 
-<div class="flex gap-8 flex-wrap">
+<div
+  class="flex gap-8 flex-wrap md:flex-nowrap justify-center md:justify-start"
+>
   <TechIcon title={"MongoDB"} url={mongo} />
   <TechIcon title={"DynamoDB"} url={dynamo} />
   <TechIcon title={"PostgreSQL"} url={postgre} />

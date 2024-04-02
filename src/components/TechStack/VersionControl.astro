@@ -5,7 +5,9 @@ import git from "../../images/vCtrl/git-1.svg";
 import TechIcon from "./TechIcon.astro";
 ---
 
-<div class="flex gap-8 flex-wrap">
+<div
+  class="flex gap-8 flex-wrap md:flex-nowrap justify-center md:justify-start"
+>
   <TechIcon title={"Git"} url={git} />
   <TechIcon title={"GitHub"} url={github} />
   <TechIcon title={"Bitbucket"} url={bitbucket} />

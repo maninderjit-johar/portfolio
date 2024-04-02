@@ -3,20 +3,30 @@ import Aerialytic from "./Aerialytic.astro";
 import MarketBox from "./MarketBox.astro";
 ---
 
-<section class="work-section px-10 pt-28 mx-auto" id="work">
-  <div class="flex gap-20 justify-around mx-auto">
+<section class="work-section px-6 md:px-10 pt-12 md:pt-28 mx-auto" id="work">
+  <div
+    class="flex flex-col md:flex-row gap-8 md:gap-20 justify-around mx-auto mx-width"
+  >
+    <p
+      class="md:hidden text-2xl uppercase font-extrabold opacity-75 text-center"
+    >
+      Experiences
+    </p>
+
     <div class="flex flex-col gap-14 w-full items-center">
       <MarketBox />
       <Aerialytic />
     </div>
 
-    <div class="flex flex-col gap-4">
-      <p class="vertical text-2xl uppercase font-extrabold opacity-75">
+    <div class="hidden md:flex flex-col gap-4">
+      <p
+        class="hidden md:block vertical text-2xl uppercase font-extrabold opacity-75"
+      >
         Experiences
       </p>
 
       <div
-        class="inline-block h-[100px] mx-auto min-h-[1em] w-0.5 self-stretch bg-neutral-100 dark:bg-white opacity-55"
+        class="hidden md:inline-block h-[100px] mx-auto min-h-[1em] w-0.5 self-stretch bg-neutral-100 dark:bg-white opacity-55"
       >
       </div>
     </div>

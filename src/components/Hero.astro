@@ -5,19 +5,38 @@ import GitHub from "../images/github.svg";
 import LinkedIN from "../images/linkedin.svg";
 ---
 
-<section class="h-[calc(100vh-5rem)] hero-section" id="hero">
+<section
+  class="h-[calc(100vh-10rem)] md:h-[calc(100vh-5rem)] hero-section px-4"
+  id="hero"
+>
   <div
-    class="container mx-auto flex justify-between lg:justify-around items-center"
+    class="container mx-auto flex justify-between lg:justify-around items-center mx-width"
   >
-    <div class="flex justify-center items-start flex-col h-lvh -mt-10 w-1/2">
-      <p class="text-4xl font-semibold">Hi, I am Mani Johar</p>
-      <p class="text-5xl font-semibold mt-2">Full Stack Developer</p>
-      <p class="mt-2">
-        <p class="mt-2">
-          Innovative developer with over 5 years of experience blending
-          engineering expertise with a passion for creating user-friendly and
-          scalable applications.
-        </p>
+    <div
+      class="flex justify-center items-center md:items-start flex-col h-lvh -mt-10 md:w-1/2"
+    >
+      <p class="text-2xl md:text-4xl font-semibold text-center md:text-left">
+        Hi, I am Mani Johar
+      </p>
+      <p
+        class="text-4xl md:text-5xl font-bold md:font-semibold mt-2 text-center md:text-left"
+      >
+        Full Stack Developer
+      </p>
+
+      <div class="block md:hidden items-center mt-6" id="#desk">
+        <Image
+          src={DeveloperImg}
+          alt="Developer Programming"
+          width={500}
+          class="float-animation"
+        />
+      </div>
+
+      <p class="mt-2 md:text-left text-justify">
+        Innovative developer with over 5 years of experience blending
+        engineering expertise with a passion for creating user-friendly and
+        scalable applications.
       </p>
 
       <div class="flex gap-4 mt-6">
@@ -32,7 +51,7 @@ import LinkedIN from "../images/linkedin.svg";
         >
       </div>
     </div>
-    <div class="flex h-lvh items-center" id="#desk">
+    <div class="hidden md:flex h-lvh items-center" id="#desk">
       <Image
         src={DeveloperImg}
         alt="Developer Programming"

@@ -7,23 +7,31 @@ import hiking from "../../images/hiking.svg";
 import ryerson from "../../images/TMU.svg";
 ---
 
-<section class="exp-section px-10 mx-auto -mt-28" id="tool">
-  <div class="flex gap-24 justify-center">
+<section class="exp-section px-4 md:px-10 mx-auto mt-16" id=" tool">
+  <div
+    class="flex flex-col md:flex-row gap-8 md:gap-24 items-center md:justify-center mx-width mx-auto"
+  >
     <div class="flex flex-col gap-4">
-      <p class="vertical text-2xl uppercase font-extrabold opacity-75">
+      <p
+        class="hidden md:block vertical text-2xl uppercase font-extrabold opacity-75"
+      >
+        About Me
+      </p>
+
+      <p class="md:hidden text-2xl uppercase font-extrabold opacity-75">
         About Me
       </p>
 
       <div
-        class="inline-block h-[150px] mx-auto min-h-[1em] w-0.5 self-stretch bg-neutral-100 dark:bg-white opacity-55"
+        class="hidden md:inline-block h-[150px] mx-auto min-h-[1em] w-0.5 self-stretch bg-neutral-100 dark:bg-white opacity-55"
       >
       </div>
     </div>
 
-    <div class="flex flex-col gap-4 w-10/12">
+    <div class="flex flex-col gap-4">
       <div class="flex flex-col gap-4 items-center">
         <p class="text-white
-        bg-opacity-90">
+        bg-opacity-90 md:text-left text-justify">
           As a Full Stack Developer with 5 years of experience, I've worked with
           both front-end and back-end development, specializing in React,
           Nodejs, Python, AWS Lambda and Django. My journey through the
@@ -31,14 +39,14 @@ import ryerson from "../../images/TMU.svg";
           intuitive and powerful software solutions.
         </p>
 
-        <p class="text-white bg-opacity-90">
+        <p class="text-white bg-opacity-90 md:text-left text-justify">
           Driven by an engineering mindset, I'm always on the lookout for new
           technologies and complex challenges to conquer. Outside the coding
           world, I apply this enthusiasm to my passions for the gym, cricket,
           and hiking, exploring innovative ways to integrate technology into
           these activities.
         </p>
-        <p class="text-white bg-opacity-90">
+        <p class="text-white bg-opacity-90 md:text-left text-justify">
           Blending my professional expertise with personal interests allows me
           to enrich both my work and leisure, striving for improvement in every
           aspect of life. It's all about making things better, whether it's
@@ -46,7 +54,9 @@ import ryerson from "../../images/TMU.svg";
         </p>
       </div>
 
-      <div class="flex gap-10 items-center justify-center">
+      <div
+        class="flex gap-4 md:gap-10 items-center justify-center flex-wrap md:flex-nowrap"
+      >
         <!-- Education -->
 
         <div class="flex flex-col items-center gap-4">
@@ -55,40 +65,46 @@ import ryerson from "../../images/TMU.svg";
             <div class="flex items-center py-1 px-2 bg-white rounded-lg">
               <Image src={ryerson} alt="Ryerson" width={100} />
               <div class="flex flex-col">
-                <p class="text-black font-semibold">Bachelor of Engineering</p>
-                <p class="text-black font-semibold">2018</p>
+                <p class="text-black font-semibold opacity-85">
+                  Bachelor of Engineering
+                </p>
+                <p class="text-black font-semibold opacity-85">2018</p>
               </div>
             </div>
           </div>
         </div>
 
         <div
-          class="h-[75px] min-h-[1em] w-0.5 bg-neutral-100 dark:bg-white opacity-55 -mb-16"
+          class="h-[75px] min-h-[1em] w-0.5 bg-neutral-100 dark:bg-white opacity-55 -mb-16 hidden md:block"
         >
         </div>
         <!-- HOBBIES-->
 
         <div class="flex flex-col items-center gap-4">
           <p class="text-white font-bold uppercase mt-6 text-xl">Hobbies</p>
-          <div class="flex gap-4">
+          <div class="flex gap-8">
             <div
               class="flex flex-col items-center py-1 px-2 bg-white rounded-lg"
             >
               <Image src={gym} alt="Gym" width={50} />
-              <p class="text-customTeal font-semibold uppercase">Gym</p>
+              <p class="text-black opacity-80 font-semibold uppercase">Gym</p>
             </div>
             <div
               class="flex flex-col items-center py-1 px-2 bg-white rounded-lg"
             >
               <Image src={cricket} alt="Gym" width={50} />
-              <p class="text-customTeal font-semibold uppercase">Cricket</p>
+              <p class="text-black opacity-80 font-semibold uppercase">
+                Cricket
+              </p>
             </div>
 
             <div
               class="flex flex-col items-center py-1 px-2 bg-white rounded-lg"
             >
               <Image src={hiking} alt="Gym" width={50} />
-              <p class="text-customTeal font-semibold uppercase">Hiking</p>
+              <p class="text-black opacity-80 font-semibold uppercase">
+                Hiking
+              </p>
             </div>
           </div>
         </div>

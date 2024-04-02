@@ -3,9 +3,11 @@ import { Image } from "astro:assets";
 import MBlogo from "../../images/MBLogo_1.svg";
 ---
 
-<div class="flex gap-8 items-center w-11/12 justify-center">
+<div class="flex flex-col md:flex-row gap-8 items-center justify-center">
   <!-- Image -->
-  <div class="flex flex-col gap-4 items-center py-2 px-4 rounded-full bg-white">
+  <div
+    class="flex flex-col gap-4 items-center py-2 px-4 rounded-lg md:rounded-full bg-white"
+  >
     <Image src={MBlogo} alt="MarketBox" width={100} />
     <!--  <p class="text-white font-semibold text-md">MarketBox</p> -->
   </div>
@@ -19,9 +21,15 @@ import MBlogo from "../../images/MBLogo_1.svg";
         Full Stack Developer
       </span>
       <span
-        class="text-white font-semibold text-md uppercase leading-6 opacity-90"
+        class="text-white hidden md:inline font-semibold text-md uppercase leading-6 opacity-90"
       >
         November 2021 - January 2024
+      </span>
+
+      <span
+        class="text-white md:hidden inline font-semibold text-md uppercase leading-6 opacity-90"
+      >
+        Nov 2021 - Jan 2024
       </span>
     </div>
     <!-- Duties -->

@@ -4,7 +4,9 @@ import docker from "../../images/devOps/docker.svg";
 import TechIcon from "./TechIcon.astro";
 ---
 
-<div class="flex gap-8 flex-wrap">
+<div
+  class="flex gap-8 flex-wrap md:flex-nowrap justify-center md:justify-start"
+>
   <TechIcon title={"AWS"} url={aws} />
   <TechIcon title={"Docker"} url={docker} />
 </div>
