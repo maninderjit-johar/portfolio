@@ -10,7 +10,7 @@ import Logo from "../images/LOGO.png";
   <div class="container mx-auto flex w-full items-center justify-between p-4">
     <!-- Logo and Name -->
     <div class="flex items-center space-x-4">
-      <a href="/">
+      <a href="#home" class="nav-link">
         <Image src={Logo} alt="Mani Johar" width={75} />
       </a>
     </div>
@@ -18,11 +18,11 @@ import Logo from "../images/LOGO.png";
     <div
       class="hidden md:flex space-x-8 py-4 px-12 bg-black rounded-full middle-nav transition-all ease-in delay-150"
     >
-      <a href="
-      #home" class="text-white hover:font-bold"> Home </a>
-      <a href="#about" class="text-white hover:font-bold">Tools</a>
-      <a href="#about" class="text-white hover:font-bold">Experiences</a>
-      <a href="#about" class="text-white hover:font-bold">About</a>
+      <a href="#home" class="text-white hover:font-bold nav-link"> Home </a>
+      <a href="#tools" class="text-white hover:font-bold nav-link">Tools</a>
+      <a href="#work" class="text-white hover:font-bold nav-link">Experiences</a
+      >
+      <a href="#about" class="text-white hover:font-bold nav-link">About</a>
     </div>
     <div class="hidden md:flex space-x-4">
       <a href="https://github.com" class="text-white hover:text-customTeal"
@@ -79,6 +79,8 @@ import Logo from "../images/LOGO.png";
       const navbar = document.getElementById("navbar");
       const heroSection = document.querySelector(".hero-section");
       const middleNav = document.querySelector(".middle-nav");
+      const navLinks = document.querySelectorAll(".nav-link");
+      const toolSection = document.querySelector("#tools");
 
       // Toggle mobile menu
       menuBtn.addEventListener("click", () => {
@@ -102,6 +104,34 @@ import Logo from "../images/LOGO.png";
           middleNav.classList.remove("bg-customTeal");
         }
       });
+
+      navLinks.forEach((link) => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          const targetId = link.getAttribute("href").substring(1);
+          const targetSection = document.getElementById(targetId);
+
+          if (targetSection) {
+            const offsetTop =
+              targetSection.offsetTop - window.innerHeight * 0.3; // 30% from the top
+            window.scrollTo({
+              top: offsetTop,
+              behavior: "smooth",
+            });
+          }
+        });
+      });
+
+      /*    window.scrollToSection = (id) => {
+        const section = document.querySelector(`#${id}`);
+        if (section) {
+          const offsetTop = section.offsetTop - window.innerHeight * 0.3; // Calculate 30% offset from the top
+          window.scrollTo({
+            top: offsetTop,
+            behavior: "smooth",
+          });
+        }
+      }; */
 
       // Optional: Implement logic to highlight the active link based on the scroll position
       // This part is more complex and depends on your page structure
