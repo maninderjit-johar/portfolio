@@ -8,9 +8,10 @@ import Layout from "../layouts/Layout.astro";
     <div class="scroll-progress" aria-hidden="true"></div>
     <nav class="nav" aria-label="Primary navigation">
       <a class="brand" href="#home">MJ</a>
-      <button class="theme-toggle" type="button" aria-label="Switch color theme" aria-pressed="false">
-        <span class="sun">Light</span>
-        <span class="moon">Dark</span>
+      <button class="theme-toggle" type="button" aria-label="Switch between day and night theme" aria-pressed="false">
+        <span class="theme-icon sun" aria-hidden="true">☀</span>
+        <span class="theme-icon moon" aria-hidden="true">☾</span>
+        <span class="theme-thumb" aria-hidden="true"></span>
       </button>
       <div class="nav-links">
         <a href="#work">Work</a>

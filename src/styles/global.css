@@ -4,38 +4,38 @@
 
 :root {
   color-scheme: light;
-  --bg: #f7f2e8;
-  --surface: #fffaf0;
-  --surface-2: #efe4d0;
-  --panel: rgba(255, 250, 240, 0.78);
-  --panel-strong: rgba(255, 250, 240, 0.92);
-  --line: rgba(45, 35, 26, 0.16);
-  --text: #201813;
-  --muted: #6e6257;
-  --soft: #3b3028;
-  --accent: #d85f2a;
-  --accent-2: #096b72;
-  --accent-3: #7c4d16;
-  --shadow: rgba(45, 35, 26, 0.16);
-  --grid: rgba(45, 35, 26, 0.055);
+  --bg: #f8fbff;
+  --surface: #ffffff;
+  --surface-2: #eaf1ff;
+  --panel: rgba(255, 255, 255, 0.82);
+  --panel-strong: rgba(255, 255, 255, 0.96);
+  --line: rgba(15, 23, 42, 0.12);
+  --text: #111827;
+  --muted: #5b6577;
+  --soft: #273449;
+  --accent: #2563eb;
+  --accent-2: #7c3aed;
+  --accent-3: #0891b2;
+  --shadow: rgba(37, 99, 235, 0.13);
+  --grid: rgba(15, 23, 42, 0.045);
 }
 
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --bg: #10100e;
-  --surface: #191714;
-  --surface-2: #242017;
-  --panel: rgba(25, 23, 20, 0.78);
-  --panel-strong: rgba(25, 23, 20, 0.92);
-  --line: rgba(236, 222, 190, 0.16);
-  --text: #fbf4e6;
-  --muted: #b8aa92;
-  --soft: #f0dfbd;
-  --accent: #f2b35d;
-  --accent-2: #70c7b8;
-  --accent-3: #d97a45;
-  --shadow: rgba(0, 0, 0, 0.3);
-  --grid: rgba(236, 222, 190, 0.045);
+  --bg: #080c1a;
+  --surface: #0f172a;
+  --surface-2: #111c35;
+  --panel: rgba(15, 23, 42, 0.78);
+  --panel-strong: rgba(15, 23, 42, 0.94);
+  --line: rgba(226, 232, 240, 0.14);
+  --text: #f8fafc;
+  --muted: #aab7cc;
+  --soft: #dbe7ff;
+  --accent: #60a5fa;
+  --accent-2: #a78bfa;
+  --accent-3: #22d3ee;
+  --shadow: rgba(0, 0, 0, 0.36);
+  --grid: rgba(226, 232, 240, 0.035);
 }
 
 * {
@@ -52,8 +52,9 @@ body {
   margin: 0;
   min-width: 320px;
   background:
-    radial-gradient(circle at 12% 12%, color-mix(in srgb, var(--accent) 18%, transparent), transparent 26rem),
-    radial-gradient(circle at 88% 16%, color-mix(in srgb, var(--accent-2) 14%, transparent), transparent 26rem),
+    radial-gradient(circle at 12% 12%, color-mix(in srgb, var(--accent) 15%, transparent), transparent 28rem),
+    radial-gradient(circle at 86% 12%, color-mix(in srgb, var(--accent-2) 13%, transparent), transparent 30rem),
+    radial-gradient(circle at 70% 74%, color-mix(in srgb, var(--accent-3) 9%, transparent), transparent 28rem),
     linear-gradient(180deg, var(--bg) 0%, var(--surface-2) 50%, var(--bg) 100%);
   color: var(--text);
   font-family:
@@ -148,43 +149,107 @@ li + li {
   place-items: center;
   border-radius: 999px;
   background: linear-gradient(135deg, var(--accent-2), var(--accent));
-  color: var(--surface);
+  color: #ffffff;
   font-weight: 950;
 }
 
 .theme-toggle {
-  display: inline-grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.18rem;
+  position: relative;
+  display: inline-flex;
+  width: 4.85rem;
+  height: 2.35rem;
+  align-items: center;
+  justify-content: space-between;
   margin-left: auto;
   border: 1px solid var(--line);
   border-radius: 999px;
-  background: color-mix(in srgb, var(--surface) 62%, transparent);
+  background:
+    radial-gradient(circle at 24% 42%, rgba(255, 255, 255, 0.78), transparent 0.42rem),
+    linear-gradient(135deg, #dff3ff, #f7fbff 48%, #eef2ff);
   color: var(--muted);
-  font: inherit;
-  font-size: 0.76rem;
-  font-weight: 900;
-  padding: 0.22rem;
+  padding: 0 0.58rem;
   cursor: pointer;
-}
-
-.theme-toggle span {
-  border-radius: 999px;
-  padding: 0.45rem 0.65rem;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.62);
   transition:
-    background 180ms ease,
-    color 180ms ease,
-    transform 180ms ease;
+    background 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease;
 }
 
-.theme-toggle[aria-pressed="true"] .sun,
-.theme-toggle[aria-pressed="false"] .moon {
-  background: var(--text);
-  color: var(--bg);
+.theme-toggle[aria-pressed="false"] {
+  background:
+    radial-gradient(circle at 24% 38%, rgba(255, 255, 255, 0.9) 0 0.08rem, transparent 0.1rem),
+    radial-gradient(circle at 68% 26%, rgba(255, 255, 255, 0.75) 0 0.06rem, transparent 0.08rem),
+    radial-gradient(circle at 78% 68%, rgba(255, 255, 255, 0.6) 0 0.05rem, transparent 0.07rem),
+    linear-gradient(135deg, #121a33, #312e81 58%, #111827);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    0 10px 28px rgba(49, 46, 129, 0.28);
 }
 
-.theme-toggle:hover span {
+.theme-icon {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  width: 1.2rem;
+  height: 1.2rem;
+  place-items: center;
+  color: #f59e0b;
+  font-size: 0.95rem;
+  line-height: 1;
+  transition:
+    color 200ms ease,
+    opacity 200ms ease,
+    transform 200ms ease;
+}
+
+.theme-icon.moon {
+  color: #c4b5fd;
+  font-size: 1.1rem;
+}
+
+.theme-toggle[aria-pressed="true"] .moon,
+.theme-toggle[aria-pressed="false"] .sun {
+  opacity: 0.42;
+  transform: scale(0.82);
+}
+
+.theme-thumb {
+  position: absolute;
+  top: 0.28rem;
+  left: 0.3rem;
+  z-index: 1;
+  width: 1.74rem;
+  height: 1.74rem;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 35% 30%, rgba(255, 255, 255, 0.95), transparent 0.32rem),
+    linear-gradient(135deg, #ffffff, #fde68a);
+  box-shadow:
+    0 8px 20px rgba(245, 158, 11, 0.28),
+    inset 0 -0.18rem 0 rgba(217, 119, 6, 0.18);
+  transition:
+    background 220ms ease,
+    box-shadow 220ms ease,
+    transform 220ms cubic-bezier(0.2, 0.9, 0.2, 1);
+}
+
+.theme-toggle[aria-pressed="false"] .theme-thumb {
+  background:
+    radial-gradient(circle at 62% 34%, rgba(49, 46, 129, 0.72) 0 0.24rem, transparent 0.25rem),
+    linear-gradient(135deg, #f8fafc, #c4b5fd);
+  box-shadow:
+    0 8px 22px rgba(167, 139, 250, 0.28),
+    inset 0 -0.18rem 0 rgba(49, 46, 129, 0.18);
+  transform: translateX(2.43rem);
+}
+
+.theme-toggle:hover .theme-thumb {
   transform: translateY(-1px);
+}
+
+.theme-toggle[aria-pressed="false"]:hover .theme-thumb {
+  transform: translateX(2.43rem) translateY(-1px);
 }
 
 .nav-links {
@@ -307,7 +372,7 @@ h3 {
 .button.primary {
   border-color: transparent;
   background: linear-gradient(135deg, var(--accent-2), var(--accent));
-  color: var(--surface);
+  color: #ffffff;
 }
 
 .button.ghost {
