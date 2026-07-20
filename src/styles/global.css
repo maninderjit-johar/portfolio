@@ -78,6 +78,30 @@ li + li {
   overflow: hidden;
 }
 
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 30;
+  width: var(--progress, 0%);
+  height: 3px;
+  background: linear-gradient(90deg, var(--blue), var(--green));
+  box-shadow: 0 0 24px rgba(125, 211, 252, 0.6);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 560ms ease,
+    transform 560ms ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .nav {
   position: fixed;
   top: 1rem;
@@ -121,6 +145,11 @@ li + li {
 
 .nav-links a:hover {
   background: rgba(125, 211, 252, 0.12);
+}
+
+.nav-links a[aria-current="true"] {
+  background: rgba(125, 211, 252, 0.14);
+  color: #ffffff;
 }
 
 .hero,
@@ -231,7 +260,8 @@ h3 {
 .hero-card,
 .case-card,
 .systems-grid article,
-.project-card {
+.project-card,
+.impact-band article {
   position: relative;
   overflow: hidden;
   border: 1px solid var(--line);
@@ -239,12 +269,18 @@ h3 {
   background: rgba(16, 19, 28, 0.82);
   box-shadow: 0 28px 90px rgba(0, 0, 0, 0.28);
   backdrop-filter: blur(18px);
+  transform-style: preserve-3d;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
 }
 
 .hero-card::before,
 .case-card::before,
 .systems-grid article::before,
-.project-card::before {
+.project-card::before,
+.impact-band article::before {
   position: absolute;
   inset: -1px;
   z-index: -1;
@@ -253,6 +289,41 @@ h3 {
     radial-gradient(circle at 20% 0%, rgba(125, 211, 252, 0.2), transparent 34%),
     radial-gradient(circle at 95% 10%, rgba(134, 239, 172, 0.14), transparent 28%);
   content: "";
+}
+
+.hero-card::after,
+.case-card::after,
+.systems-grid article::after,
+.project-card::after,
+.impact-band article::after {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    420px circle at var(--x, 50%) var(--y, 0%),
+    rgba(125, 211, 252, 0.16),
+    transparent 42%
+  );
+  content: "";
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 180ms ease;
+}
+
+.hero-card:hover,
+.case-card:hover,
+.systems-grid article:hover,
+.project-card:hover,
+.impact-band article:hover {
+  border-color: rgba(125, 211, 252, 0.42);
+  box-shadow: 0 32px 90px rgba(0, 0, 0, 0.34);
+}
+
+.hero-card:hover::after,
+.case-card:hover::after,
+.systems-grid article:hover::after,
+.project-card:hover::after,
+.impact-band article:hover::after {
+  opacity: 1;
 }
 
 .hero-card {
@@ -386,15 +457,11 @@ h3 {
 .project-card {
   min-height: 17rem;
   padding: 1.2rem;
-  transition:
-    transform 180ms ease,
-    border-color 180ms ease;
 }
 
 .systems-grid article:hover,
 .project-card:hover {
   border-color: rgba(125, 211, 252, 0.5);
-  transform: translateY(-6px);
 }
 
 .systems-grid span,
@@ -475,5 +542,21 @@ h3 {
   .hero-actions,
   .button {
     width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal,
+  .button::after,
+  .hero-card,
+  .case-card,
+  .systems-grid article,
+  .project-card,
+  .impact-band article {
+    transition: none;
   }
 }

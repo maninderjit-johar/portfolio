@@ -5,6 +5,7 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout>
   <main class="portfolio">
+    <div class="scroll-progress" aria-hidden="true"></div>
     <nav class="nav" aria-label="Primary navigation">
       <a class="brand" href="#home">MJ</a>
       <div class="nav-links">
@@ -31,29 +32,29 @@ import Layout from "../layouts/Layout.astro";
       <aside class="hero-card" aria-label="Career highlights">
         <div class="availability">Open to full-stack and frontend roles</div>
         <div class="proof-grid">
-          <span><strong>7+</strong> years experience</span>
-          <span><strong>10+</strong> Next.js/React apps</span>
-          <span><strong>15+</strong> backend services</span>
-          <span><strong>100+</strong> reliability tests</span>
+          <span><strong data-count="7" data-suffix="+">0</strong> years experience</span>
+          <span><strong data-count="10" data-suffix="+">0</strong> Next.js/React apps</span>
+          <span><strong data-count="15" data-suffix="+">0</strong> backend services</span>
+          <span><strong data-count="100" data-suffix="+">0</strong> reliability tests</span>
         </div>
       </aside>
     </section>
 
     <section class="impact-band" aria-label="Impact metrics">
       <article>
-        <strong>30%</strong>
+        <strong data-count="30" data-suffix="%">0</strong>
         <span>customer satisfaction lift</span>
       </article>
       <article>
-        <strong>25%</strong>
+        <strong data-count="25" data-suffix="%">0</strong>
         <span>fewer scheduling errors</span>
       </article>
       <article>
-        <strong>23%</strong>
+        <strong data-count="23" data-suffix="%">0</strong>
         <span>sales increase in two months</span>
       </article>
       <article>
-        <strong>97%</strong>
+        <strong data-count="97" data-suffix="%">0</strong>
         <span>object-detection accuracy supported</span>
       </article>
     </section>
@@ -185,3 +186,108 @@ import Layout from "../layouts/Layout.astro";
     </section>
   </main>
 </Layout>
+
+<script>
+  const progress = document.querySelector(".scroll-progress");
+  const revealTargets = document.querySelectorAll(
+    ".hero-copy, .hero-card, .impact-band article, .section-heading, .case-card, .systems-grid article, .project-card, .contact"
+  );
+  const interactiveCards = document.querySelectorAll(
+    ".hero-card, .case-card, .systems-grid article, .project-card, .impact-band article"
+  );
+  const countTargets = document.querySelectorAll("[data-count]");
+  const navLinks = document.querySelectorAll(".nav-links a");
+  const sections = [...document.querySelectorAll("section[id]")];
+
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  const updateProgress = () => {
+    if (!progress) return;
+    const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+    const value = scrollable > 0 ? window.scrollY / scrollable : 0;
+    progress.style.setProperty("--progress", `${Math.min(value, 1) * 100}%`);
+  };
+
+  const setActiveNav = () => {
+    const active = sections
+      .map((section) => ({
+        id: section.id,
+        top: Math.abs(section.getBoundingClientRect().top - 120),
+      }))
+      .sort((a, b) => a.top - b.top)[0];
+
+    navLinks.forEach((link) => {
+      link.toggleAttribute("aria-current", link.getAttribute("href") === `#${active?.id}`);
+    });
+  };
+
+  const animateCount = (element) => {
+    if (element.dataset.done === "true") return;
+    element.dataset.done = "true";
+
+    const end = Number(element.getAttribute("data-count") || 0);
+    const suffix = element.getAttribute("data-suffix") || "";
+    const duration = prefersReducedMotion ? 1 : 900;
+    const start = performance.now();
+
+    const tick = (now) => {
+      const progressValue = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progressValue, 3);
+      element.textContent = `${Math.round(end * eased)}${suffix}`;
+      if (progressValue < 1) requestAnimationFrame(tick);
+    };
+
+    requestAnimationFrame(tick);
+  };
+
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-visible");
+        if (entry.target instanceof HTMLElement && entry.target.matches("[data-count]")) {
+          animateCount(entry.target);
+        }
+      });
+    },
+    { threshold: 0.18 }
+  );
+
+  revealTargets.forEach((target) => {
+    target.classList.add("reveal");
+    revealObserver.observe(target);
+  });
+
+  countTargets.forEach((target) => revealObserver.observe(target));
+
+  interactiveCards.forEach((card) => {
+    if (!(card instanceof HTMLElement)) return;
+
+    card.addEventListener("pointermove", (event) => {
+      const rect = card.getBoundingClientRect();
+      const x = event.clientX - rect.left;
+      const y = event.clientY - rect.top;
+      const rotateX = ((y / rect.height) - 0.5) * -4;
+      const rotateY = ((x / rect.width) - 0.5) * 4;
+
+      card.style.setProperty("--x", `${x}px`);
+      card.style.setProperty("--y", `${y}px`);
+
+      if (!prefersReducedMotion) {
+        card.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+      }
+    });
+
+    card.addEventListener("pointerleave", () => {
+      card.style.transform = "";
+    });
+  });
+
+  window.addEventListener("scroll", () => {
+    updateProgress();
+    setActiveNav();
+  }, { passive: true });
+
+  updateProgress();
+  setActiveNav();
+</script>
