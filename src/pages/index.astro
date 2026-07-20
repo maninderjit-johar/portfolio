@@ -31,6 +31,15 @@ import Layout from "../layouts/Layout.astro";
 
       <aside class="hero-card" aria-label="Career highlights">
         <div class="availability">Open to full-stack and frontend roles</div>
+        <div class="orbit-card" aria-hidden="true">
+          <span class="orbit-dot one"></span>
+          <span class="orbit-dot two"></span>
+          <span class="orbit-dot three"></span>
+          <div>
+            <small>Currently building</small>
+            <strong>Partner-ready SaaS workflows</strong>
+          </div>
+        </div>
         <div class="proof-grid">
           <span><strong data-count="7" data-suffix="+">0</strong> years experience</span>
           <span><strong data-count="10" data-suffix="+">0</strong> Next.js/React apps</span>
@@ -39,6 +48,33 @@ import Layout from "../layouts/Layout.astro";
         </div>
       </aside>
     </section>
+
+    <div class="stack-marquee" aria-label="Core technologies">
+      <div>
+        <span>React</span>
+        <span>Next.js</span>
+        <span>TypeScript</span>
+        <span>GraphQL</span>
+        <span>Python</span>
+        <span>Django</span>
+        <span>FastAPI</span>
+        <span>Docker</span>
+        <span>Kubernetes</span>
+        <span>GitHub Actions</span>
+      </div>
+      <div aria-hidden="true">
+        <span>React</span>
+        <span>Next.js</span>
+        <span>TypeScript</span>
+        <span>GraphQL</span>
+        <span>Python</span>
+        <span>Django</span>
+        <span>FastAPI</span>
+        <span>Docker</span>
+        <span>Kubernetes</span>
+        <span>GitHub Actions</span>
+      </div>
+    </div>
 
     <section class="impact-band" aria-label="Impact metrics">
       <article>
@@ -155,16 +191,25 @@ import Layout from "../layouts/Layout.astro";
 
       <div class="project-grid">
         <a class="project-card" href="https://github.com/maninderjit-johar/cinequiz" target="_blank" rel="noreferrer">
+          <div class="project-preview game-preview" aria-hidden="true">
+            <i></i><i></i><i></i>
+          </div>
           <span>React · TypeScript · Redux Toolkit</span>
           <h3>CineQuiz</h3>
           <p>Movie-guessing game with async data, player flow, Radix UI primitives, and responsive interaction design.</p>
         </a>
         <a class="project-card" href="https://github.com/maninderjit-johar/essentialui" target="_blank" rel="noreferrer">
+          <div class="project-preview library-preview" aria-hidden="true">
+            <i></i><i></i><i></i><i></i>
+          </div>
           <span>React library · Vite · Theme context</span>
           <h3>EssentialUI</h3>
           <p>Reusable component library focused on a package-ready, responsive, themeable sidebar system.</p>
         </a>
         <a class="project-card" href="https://github.com/maninderjit-johar/aspirearc" target="_blank" rel="noreferrer">
+          <div class="project-preview app-preview" aria-hidden="true">
+            <i></i><i></i><i></i>
+          </div>
           <span>Next.js · Prisma · PostgreSQL · Docker</span>
           <h3>AspireArc</h3>
           <p>Full-stack fitness logger with relational workout history and Docker-based local infrastructure.</p>
@@ -259,6 +304,15 @@ import Layout from "../layouts/Layout.astro";
   });
 
   countTargets.forEach((target) => revealObserver.observe(target));
+
+  requestAnimationFrame(() => {
+    revealTargets.forEach((target) => {
+      const rect = target.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        target.classList.add("is-visible");
+      }
+    });
+  });
 
   interactiveCards.forEach((card) => {
     if (!(card instanceof HTMLElement)) return;

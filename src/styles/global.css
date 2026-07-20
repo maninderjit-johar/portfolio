@@ -339,6 +339,73 @@ h3 {
   padding: 0.9rem;
 }
 
+.orbit-card {
+  position: relative;
+  display: grid;
+  min-height: 9.5rem;
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid rgba(125, 211, 252, 0.14);
+  border-radius: 8px;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(125, 211, 252, 0.16), transparent 42%),
+    rgba(8, 9, 13, 0.42);
+  margin-top: 0.75rem;
+  text-align: center;
+}
+
+.orbit-card::before,
+.orbit-card::after {
+  position: absolute;
+  inset: 1.3rem;
+  border: 1px solid rgba(125, 211, 252, 0.24);
+  border-radius: 50%;
+  content: "";
+}
+
+.orbit-card::after {
+  inset: 2.2rem 3.6rem;
+  border-color: rgba(134, 239, 172, 0.22);
+  transform: rotate(-18deg);
+}
+
+.orbit-card small {
+  color: var(--green);
+  font-size: 0.75rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.orbit-card strong {
+  display: block;
+  max-width: 16rem;
+  margin-top: 0.35rem;
+  font-size: 1.35rem;
+  line-height: 1.1;
+}
+
+.orbit-dot {
+  position: absolute;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: var(--blue);
+  box-shadow: 0 0 24px rgba(125, 211, 252, 0.9);
+  animation: orbit 7s linear infinite;
+}
+
+.orbit-dot.two {
+  background: var(--green);
+  animation-delay: -2.2s;
+  animation-duration: 9s;
+}
+
+.orbit-dot.three {
+  background: var(--amber);
+  animation-delay: -4s;
+  animation-duration: 11s;
+}
+
 .proof-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -363,6 +430,33 @@ h3 {
   color: var(--text);
   font-size: 1.9rem;
   line-height: 1;
+}
+
+.stack-marquee {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  border-block: 1px solid var(--line);
+  background: rgba(8, 9, 13, 0.55);
+  mask-image: linear-gradient(90deg, transparent, black 12%, black 88%, transparent);
+}
+
+.stack-marquee div {
+  display: flex;
+  min-width: max-content;
+  gap: 0.75rem;
+  padding: 1rem 0.375rem;
+  animation: marquee 28s linear infinite;
+}
+
+.stack-marquee span {
+  border: 1px solid rgba(226, 232, 240, 0.12);
+  border-radius: 999px;
+  background: rgba(16, 19, 28, 0.72);
+  color: #dbeafe;
+  font-size: 0.88rem;
+  font-weight: 800;
+  padding: 0.55rem 0.85rem;
 }
 
 .impact-band {
@@ -459,6 +553,111 @@ h3 {
   padding: 1.2rem;
 }
 
+.project-preview {
+  position: relative;
+  height: 7.5rem;
+  overflow: hidden;
+  border: 1px solid rgba(226, 232, 240, 0.1);
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(125, 211, 252, 0.12), rgba(134, 239, 172, 0.08)),
+    rgba(8, 9, 13, 0.72);
+  margin-bottom: 1.1rem;
+}
+
+.project-preview::before {
+  position: absolute;
+  inset: 0.8rem;
+  border-radius: 6px;
+  background:
+    linear-gradient(90deg, rgba(248, 250, 252, 0.16) 12%, transparent 12% 18%, rgba(248, 250, 252, 0.08) 18% 82%, transparent 82%),
+    linear-gradient(rgba(248, 250, 252, 0.08), rgba(248, 250, 252, 0.03));
+  content: "";
+}
+
+.project-preview i {
+  position: absolute;
+  display: block;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--blue), var(--green));
+}
+
+.game-preview i:nth-child(1) {
+  width: 3.5rem;
+  height: 3.5rem;
+  top: 2rem;
+  left: 1.5rem;
+}
+
+.game-preview i:nth-child(2) {
+  width: 6rem;
+  height: 0.55rem;
+  top: 2.4rem;
+  right: 1.3rem;
+}
+
+.game-preview i:nth-child(3) {
+  width: 4.5rem;
+  height: 0.55rem;
+  top: 3.6rem;
+  right: 2.8rem;
+  opacity: 0.55;
+}
+
+.library-preview i {
+  width: 4rem;
+  height: 1.1rem;
+  left: 1.2rem;
+  opacity: 0.75;
+}
+
+.library-preview i:nth-child(1) {
+  top: 1.3rem;
+}
+
+.library-preview i:nth-child(2) {
+  top: 3rem;
+}
+
+.library-preview i:nth-child(3) {
+  top: 4.7rem;
+}
+
+.library-preview i:nth-child(4) {
+  top: 1.4rem;
+  right: 1.2rem;
+  left: auto;
+  width: 6rem;
+  height: 4rem;
+  border-radius: 8px;
+  opacity: 0.35;
+}
+
+.app-preview i:nth-child(1) {
+  width: 2.5rem;
+  height: 4.8rem;
+  bottom: 1rem;
+  left: 1.3rem;
+}
+
+.app-preview i:nth-child(2) {
+  width: 2.5rem;
+  height: 6rem;
+  bottom: 1rem;
+  left: 4.4rem;
+}
+
+.app-preview i:nth-child(3) {
+  width: 2.5rem;
+  height: 3.3rem;
+  bottom: 1rem;
+  left: 7.5rem;
+}
+
+.project-card:hover .project-preview i {
+  animation: pulse-preview 900ms ease both;
+}
+
 .systems-grid article:hover,
 .project-card:hover {
   border-color: rgba(125, 211, 252, 0.5);
@@ -475,6 +674,10 @@ h3 {
 .systems-grid h3,
 .project-card h3 {
   margin-top: 3.2rem;
+}
+
+.project-card .project-preview + span + h3 {
+  margin-top: 0;
 }
 
 .systems-grid p,
@@ -545,6 +748,33 @@ h3 {
   }
 }
 
+@keyframes orbit {
+  from {
+    transform: rotate(0deg) translateX(6rem) rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg) translateX(6rem) rotate(-360deg);
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes pulse-preview {
+  50% {
+    filter: brightness(1.35);
+    transform: translateY(-4px);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -558,5 +788,11 @@ h3 {
   .project-card,
   .impact-band article {
     transition: none;
+  }
+
+  .orbit-dot,
+  .stack-marquee div,
+  .project-card:hover .project-preview i {
+    animation: none;
   }
 }
