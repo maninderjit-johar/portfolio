@@ -18,10 +18,10 @@ import Layout from "../layouts/Layout.astro";
 
     <section class="hero" id="home">
       <div class="hero-copy">
-        <p class="eyebrow">Maninderjit Johar · Full-stack developer</p>
-        <h1>I build product-ready web platforms for SaaS teams.</h1>
+        <p class="eyebrow">Maninderjit Johar · Full-stack product engineer</p>
+        <h1>Frontend, backend, APIs, databases, cloud, and delivery.</h1>
         <p class="hero-text">
-          7+ years shipping React, Next.js, TypeScript, Python, GraphQL, Docker, and Kubernetes systems across product UI, APIs, partner integrations, and reliable release workflows.
+          7+ years building production software across React, Next.js, TypeScript, Python, GraphQL, REST APIs, PostgreSQL, Docker, Kubernetes, CI/CD, version control, and multi-environment deployments.
         </p>
         <div class="hero-actions">
           <a class="button primary" href="#work">View experience</a>
@@ -36,8 +36,8 @@ import Layout from "../layouts/Layout.astro";
           <span class="orbit-dot two"></span>
           <span class="orbit-dot three"></span>
           <div>
-            <small>Currently building</small>
-            <strong>Partner-ready SaaS workflows</strong>
+            <small>Engineering coverage</small>
+            <strong>UI to API to cloud delivery</strong>
           </div>
         </div>
         <div class="proof-grid">
@@ -78,20 +78,20 @@ import Layout from "../layouts/Layout.astro";
 
     <section class="impact-band" aria-label="Impact metrics">
       <article>
-        <strong data-count="30" data-suffix="%">0</strong>
-        <span>customer satisfaction lift</span>
+        <strong data-count="100" data-suffix="+">0</strong>
+        <span>project SaaS ecosystem</span>
       </article>
       <article>
-        <strong data-count="25" data-suffix="%">0</strong>
-        <span>fewer scheduling errors</span>
+        <strong data-count="10" data-suffix="+">0</strong>
+        <span>Next.js and React apps</span>
       </article>
       <article>
-        <strong data-count="23" data-suffix="%">0</strong>
-        <span>sales increase in two months</span>
+        <strong data-count="15" data-suffix="+">0</strong>
+        <span>backend services touched</span>
       </article>
       <article>
-        <strong data-count="97" data-suffix="%">0</strong>
-        <span>object-detection accuracy supported</span>
+        <strong data-count="100" data-suffix="+">0</strong>
+        <span>unit and integration tests</span>
       </article>
     </section>
 
@@ -101,7 +101,7 @@ import Layout from "../layouts/Layout.astro";
         <h2>Recent work, framed around business and engineering outcomes.</h2>
       </div>
 
-      <div class="case-grid">
+      <div class="case-grid timeline-grid">
         <article class="case-card featured">
           <div class="case-meta">
             <span>June 2024 - Present</span>
@@ -160,8 +160,27 @@ import Layout from "../layouts/Layout.astro";
 
     <section class="section systems" id="systems">
       <div class="section-heading">
-        <p class="eyebrow">How I work</p>
-        <h2>Product-minded engineering across the stack.</h2>
+        <p class="eyebrow">Full-stack toolkit</p>
+        <h2>Clear coverage across the product delivery stack.</h2>
+      </div>
+
+      <div class="tech-cloud" aria-label="Technology stack">
+        <span><b>⚛</b> React</span>
+        <span><b>N</b> Next.js</span>
+        <span><b>TS</b> TypeScript</span>
+        <span><b>JS</b> JavaScript</span>
+        <span><b>GQL</b> GraphQL</span>
+        <span><b>API</b> REST</span>
+        <span><b>PY</b> Python</span>
+        <span><b>DJ</b> Django</span>
+        <span><b>FA</b> FastAPI</span>
+        <span><b>DB</b> PostgreSQL</span>
+        <span><b>MG</b> MongoDB</span>
+        <span><b>DK</b> Docker</span>
+        <span><b>K8</b> Kubernetes</span>
+        <span><b>CI</b> GitHub Actions</span>
+        <span><b>Git</b> Version Control</span>
+        <span><b>AWS</b> Cloud</span>
       </div>
 
       <div class="systems-grid">
@@ -235,10 +254,10 @@ import Layout from "../layouts/Layout.astro";
 <script>
   const progress = document.querySelector(".scroll-progress");
   const revealTargets = document.querySelectorAll(
-    ".hero-copy, .hero-card, .impact-band article, .section-heading, .case-card, .systems-grid article, .project-card, .contact"
+    ".hero-copy, .hero-card, .impact-band article, .section-heading, .case-card, .tech-cloud span, .systems-grid article, .project-card, .contact"
   );
   const interactiveCards = document.querySelectorAll(
-    ".hero-card, .case-card, .systems-grid article, .project-card, .impact-band article"
+    ".hero-card, .case-card, .tech-cloud span, .systems-grid article, .project-card, .impact-band article"
   );
   const countTargets = document.querySelectorAll("[data-count]");
   const navLinks = document.querySelectorAll(".nav-links a");
