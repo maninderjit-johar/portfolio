@@ -40,44 +40,47 @@ import Layout from "../layouts/Layout.astro";
             <span></span><span></span><span></span>
             <strong>full-stack-delivery</strong>
           </div>
-          <div class="delivery-lab">
-            <div class="code-window">
-              <span>const platform = ship(&#123;</span>
-              <span>&nbsp;&nbsp;ui: "React + Next.js",</span>
-              <span>&nbsp;&nbsp;api: "REST + GraphQL",</span>
-              <span>&nbsp;&nbsp;data: "Postgres",</span>
-              <span>&nbsp;&nbsp;deploy: "Docker + K8s"</span>
-              <span>&#125;);</span>
-            </div>
-
-            <div class="architecture-stack">
-              <div class="arch-layer ui">
-                <small>01</small>
-                <strong>Frontend</strong>
-                <span>React · Next.js · TypeScript</span>
+          <div class="delivery-map">
+            <div class="product-preview">
+              <div class="preview-toolbar">
+                <span></span>
+                <strong>Product UI</strong>
               </div>
-              <div class="arch-layer api">
-                <small>02</small>
-                <strong>API Layer</strong>
-                <span>REST · GraphQL · Auth · Integrations</span>
-              </div>
-              <div class="arch-layer service">
-                <small>03</small>
-                <strong>Backend Services</strong>
-                <span>Python · Django · FastAPI · Tests</span>
-              </div>
-              <div class="arch-layer infra">
-                <small>04</small>
-                <strong>Data + Delivery</strong>
-                <span>PostgreSQL · Docker · Kubernetes</span>
+              <div class="preview-grid">
+                <span class="preview-card hero-tile"></span>
+                <span class="preview-card metric-tile"></span>
+                <span class="preview-card chart-tile"></span>
+                <span class="preview-card list-tile"></span>
               </div>
             </div>
 
-            <div class="signal-rail" aria-hidden="true">
-              <span></span>
-              <span></span>
-              <span></span>
+            <div class="service-orbit" aria-hidden="true">
+              <span class="orbit-ring"></span>
+              <span class="request-dot one"></span>
+              <span class="request-dot two"></span>
+              <span class="request-dot three"></span>
+              <div class="service-core">
+                <i class="devicon-graphql-plain"></i>
+                <strong>API</strong>
+                <small>REST · GraphQL</small>
+              </div>
             </div>
+
+            <div class="delivery-column services">
+              <span><i class="devicon-python-plain"></i>Python services</span>
+              <span><i class="devicon-fastapi-plain"></i>FastAPI workflows</span>
+              <span><i class="devicon-django-plain"></i>Django admin</span>
+            </div>
+
+            <div class="delivery-column data-cloud">
+              <span><i class="devicon-postgresql-plain"></i>PostgreSQL</span>
+              <span><i class="devicon-docker-plain"></i>Docker</span>
+              <span><i class="devicon-kubernetes-plain"></i>Kubernetes</span>
+            </div>
+
+            <span class="flow-path path-ui-api"></span>
+            <span class="flow-path path-api-services"></span>
+            <span class="flow-path path-services-data"></span>
           </div>
         </div>
       </aside>
