@@ -4,303 +4,184 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-  <main class="portfolio-story">
-    <nav class="story-nav" aria-label="Primary navigation">
-      <a class="story-brand" href="#intro">MJ</a>
-      <div>
-        <a href="#aerialytic">Aerialytic</a>
-        <a href="#marketbox">MarketBox</a>
+  <main class="portfolio">
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="brand" href="#home">MJ</a>
+      <div class="nav-links">
+        <a href="#work">Work</a>
+        <a href="#systems">Systems</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
       </div>
     </nav>
 
-    <div class="scroll-stage" aria-hidden="true">
-      <canvas id="scroll-3d"></canvas>
-      <div class="device-shell" id="device-shell">
-        <div class="device-lid">
-          <div class="screen-glow"></div>
-          <div class="screen-content" id="screen-content">
-            <span class="screen-kicker">Solar SaaS platform</span>
-            <strong id="screen-title">Full-stack product engineering</strong>
-            <small id="screen-meta">React · Next.js · Python · GraphQL</small>
-          </div>
-        </div>
-        <div class="device-base"></div>
-      </div>
-    </div>
-
-    <section class="story-panel hero-panel" id="intro" data-step="intro">
-      <div class="story-copy">
-        <p class="kicker">Maninderjit Johar</p>
-        <h1>Full-stack developer building product-ready web platforms.</h1>
-        <p>
-          7+ years building React, Next.js, TypeScript, Python, GraphQL, Docker, and Kubernetes systems for SaaS teams that need reliable product delivery.
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow">Maninderjit Johar · Full-stack developer</p>
+        <h1>I build product-ready web platforms for SaaS teams.</h1>
+        <p class="hero-text">
+          7+ years shipping React, Next.js, TypeScript, Python, GraphQL, Docker, and Kubernetes systems across product UI, APIs, partner integrations, and reliable release workflows.
         </p>
-        <div class="hero-proof">
-          <span><strong>30%</strong> customer satisfaction lift</span>
-          <span><strong>10+</strong> Next.js/React apps</span>
-          <span><strong>100+</strong> reliability tests</span>
-        </div>
-        <div class="story-actions">
-          <a class="story-button primary" href="#aerialytic">View experience</a>
-          <a class="story-button" href="https://github.com/maninderjit-johar" target="_blank" rel="noreferrer">GitHub</a>
+        <div class="hero-actions">
+          <a class="button primary" href="#work">View experience</a>
+          <a class="button ghost" href="mailto:maninderjit.johar@outlook.com">Email me</a>
         </div>
       </div>
-    </section>
 
-    <section class="story-panel right-panel" id="aerialytic" data-step="platform">
-      <div class="story-copy glass-copy">
-        <p class="kicker">Current chapter</p>
-        <h2>Aerialytic: full-stack platform work across solar SaaS.</h2>
-        <div class="stat-strip">
-          <span><strong>100+</strong> project ecosystem</span>
+      <aside class="hero-card" aria-label="Career highlights">
+        <div class="availability">Open to full-stack and frontend roles</div>
+        <div class="proof-grid">
+          <span><strong>7+</strong> years experience</span>
           <span><strong>10+</strong> Next.js/React apps</span>
           <span><strong>15+</strong> backend services</span>
+          <span><strong>100+</strong> reliability tests</span>
         </div>
-        <ul>
-          <li>Rejoined after a previous frontend role and expanded into full-stack product engineering across solar SaaS workflows.</li>
-          <li>Delivered lead capture, customer workflows, proposal experiences, admin operations, and partner-facing product surfaces.</li>
-          <li>Modularized CRM capabilities into embeddable partner-ready experiences with secure sessions and configuration-driven flows.</li>
-        </ul>
+      </aside>
+    </section>
+
+    <section class="impact-band" aria-label="Impact metrics">
+      <article>
+        <strong>30%</strong>
+        <span>customer satisfaction lift</span>
+      </article>
+      <article>
+        <strong>25%</strong>
+        <span>fewer scheduling errors</span>
+      </article>
+      <article>
+        <strong>23%</strong>
+        <span>sales increase in two months</span>
+      </article>
+      <article>
+        <strong>97%</strong>
+        <span>object-detection accuracy supported</span>
+      </article>
+    </section>
+
+    <section class="section" id="work">
+      <div class="section-heading">
+        <p class="eyebrow">Selected experience</p>
+        <h2>Recent work, framed around business and engineering outcomes.</h2>
+      </div>
+
+      <div class="case-grid">
+        <article class="case-card featured">
+          <div class="case-meta">
+            <span>June 2024 - Present</span>
+            <span>Aerialytic</span>
+          </div>
+          <h3>Full-stack platform engineering for solar SaaS workflows.</h3>
+          <p>
+            Rejoined Aerialytic after an earlier frontend role and expanded into full-stack product engineering across lead capture, customer workflows, proposals, admin operations, and partner-facing experiences.
+          </p>
+          <div class="case-stats">
+            <span><strong>100+</strong> project ecosystem</span>
+            <span><strong>10+</strong> Next.js/React apps</span>
+            <span><strong>15+</strong> backend services</span>
+            <span><strong>100+</strong> Python/API tests</span>
+          </div>
+          <ul>
+            <li>Modularized CRM capabilities into embeddable partner-ready experiences with secure sessions and configuration-driven flows.</li>
+            <li>Implemented REST and GraphQL workflows for solar design, production modeling, savings calculations, lead management, and proposal generation.</li>
+            <li>Containerized and deployed services with Docker, Kubernetes, GitHub Actions, and GitOps workflows.</li>
+          </ul>
+        </article>
+
+        <article class="case-card">
+          <div class="case-meta">
+            <span>Nov 2021 - Jan 2024</span>
+            <span>MarketBox</span>
+          </div>
+          <h3>Booking and scheduling product improvements.</h3>
+          <p>
+            Redesigned booking, console, and onboarding workflows for a fast-moving SaaS product.
+          </p>
+          <div class="case-stats compact">
+            <span><strong>30%</strong> satisfaction lift</span>
+            <span><strong>25%</strong> fewer scheduling errors</span>
+            <span><strong>23%</strong> sales increase</span>
+            <span><strong>6s -> 3.5s</strong> load-time improvement</span>
+          </div>
+        </article>
+
+        <article class="case-card">
+          <div class="case-meta">
+            <span>Dec 2018 - Nov 2021</span>
+            <span>Aerialytic</span>
+          </div>
+          <h3>Frontend foundations in solar data visualization.</h3>
+          <p>
+            Built scalable React experiences for solar-energy applications while collaborating with AI, GIS, and backend teams.
+          </p>
+          <div class="case-stats compact">
+            <span><strong>20%</strong> faster rollout</span>
+            <span><strong>97%</strong> accuracy supported</span>
+          </div>
+        </article>
       </div>
     </section>
 
-    <section class="story-panel left-panel" data-step="reliability">
-      <div class="story-copy glass-copy">
-        <p class="kicker">Quality systems</p>
-        <h2>Reliability for APIs, UI, and calculation-heavy workflows.</h2>
-        <div class="stat-strip two">
-          <span><strong>100+</strong> Python tests</span>
-          <span><strong>4</strong> test layers</span>
-        </div>
-        <ul>
-          <li>Implemented REST and GraphQL workflows for solar design, production modeling, savings calculations, lead management, and proposals.</li>
-          <li>Strengthened reliability with unit/integration tests, golden-test scenarios, Jest, and Playwright coverage.</li>
-          <li>Containerized and deployed applications with Docker, Kubernetes, GitHub Actions, and GitOps workflows.</li>
-        </ul>
+    <section class="section systems" id="systems">
+      <div class="section-heading">
+        <p class="eyebrow">How I work</p>
+        <h2>Product-minded engineering across the stack.</h2>
       </div>
-    </section>
 
-    <section class="story-panel right-panel" id="marketbox" data-step="impact">
-      <div class="story-copy glass-copy">
-        <p class="kicker">Business outcomes</p>
-        <h2>MarketBox: measurable product improvements.</h2>
-        <div class="metric-wall">
-          <span><strong>30%</strong> higher customer satisfaction</span>
-          <span><strong>25%</strong> fewer scheduling errors</span>
-          <span><strong>23%</strong> sales increase in two months</span>
-          <span><strong>6s → 3.5s</strong> load-time improvement</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="story-panel left-panel" data-step="early">
-      <div class="story-copy glass-copy">
-        <p class="kicker">Original Aerialytic chapter</p>
-        <h2>Frontend foundations in solar data visualization.</h2>
-        <div class="metric-wall compact">
-          <span><strong>20%</strong> faster feature rollout</span>
-          <span><strong>97%</strong> object-detection accuracy supported</span>
-        </div>
-        <p>
-          Built scalable React experiences for solar-energy applications while partnering with AI, GIS, and backend teams.
-        </p>
-      </div>
-    </section>
-
-    <section class="project-lab" id="projects" data-step="projects">
-      <div class="lab-heading">
-        <p class="kicker">Public project lab</p>
-        <h2>Three projects, three engineering signals.</h2>
-      </div>
-      <div class="lab-grid">
-        <a href="https://github.com/maninderjit-johar/cinequiz" target="_blank" rel="noreferrer">
+      <div class="systems-grid">
+        <article>
           <span>01</span>
-          <h3>CineQuiz</h3>
-          <p>React + TypeScript game flow with async data, Redux Toolkit, Radix UI, and responsive interaction design.</p>
-        </a>
-        <a href="https://github.com/maninderjit-johar/essentialui" target="_blank" rel="noreferrer">
+          <h3>Interfaces that ship</h3>
+          <p>React, Next.js, TypeScript, Apollo Client, responsive UI, state flows, and reusable component systems.</p>
+        </article>
+        <article>
           <span>02</span>
-          <h3>EssentialUI</h3>
-          <p>Reusable React component library with package-ready builds, theme context, and responsive sidebar patterns.</p>
-        </a>
-        <a href="https://github.com/maninderjit-johar/aspirearc" target="_blank" rel="noreferrer">
+          <h3>APIs that scale</h3>
+          <p>REST, GraphQL, Django, FastAPI, Python services, data modeling, and calculation-heavy product workflows.</p>
+        </article>
+        <article>
           <span>03</span>
+          <h3>Delivery that holds up</h3>
+          <p>Docker, Kubernetes, GitHub Actions, GitOps, testing strategy, and multi-environment release practices.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="section-heading project-heading">
+        <p class="eyebrow">Public projects</p>
+        <h2>Small projects with clear engineering signals.</h2>
+      </div>
+
+      <div class="project-grid">
+        <a class="project-card" href="https://github.com/maninderjit-johar/cinequiz" target="_blank" rel="noreferrer">
+          <span>React · TypeScript · Redux Toolkit</span>
+          <h3>CineQuiz</h3>
+          <p>Movie-guessing game with async data, player flow, Radix UI primitives, and responsive interaction design.</p>
+        </a>
+        <a class="project-card" href="https://github.com/maninderjit-johar/essentialui" target="_blank" rel="noreferrer">
+          <span>React library · Vite · Theme context</span>
+          <h3>EssentialUI</h3>
+          <p>Reusable component library focused on a package-ready, responsive, themeable sidebar system.</p>
+        </a>
+        <a class="project-card" href="https://github.com/maninderjit-johar/aspirearc" target="_blank" rel="noreferrer">
+          <span>Next.js · Prisma · PostgreSQL · Docker</span>
           <h3>AspireArc</h3>
-          <p>Next.js, Prisma, PostgreSQL, Docker, and relational workout-history modeling in a full-stack fitness app.</p>
+          <p>Full-stack fitness logger with relational workout history and Docker-based local infrastructure.</p>
         </a>
       </div>
     </section>
 
-    <section class="contact-finale" id="contact" data-step="contact">
-      <p class="kicker">Open to the right team</p>
+    <section class="contact" id="contact">
+      <p class="eyebrow">Let’s talk</p>
       <h2>Have a product challenge worth solving?</h2>
       <p>
-        I’m interested in full-stack and frontend roles where product thinking, UI craft, APIs, and reliable delivery all matter.
+        I’m open to full-stack and frontend opportunities where user experience, APIs, and dependable delivery matter.
       </p>
-      <div class="story-actions center">
-        <a class="story-button primary" href="mailto:maninderjit.johar@outlook.com">Email me</a>
-        <a class="story-button" href="https://www.linkedin.com/in/manijohar/" target="_blank" rel="noreferrer">LinkedIn</a>
+      <div class="hero-actions center">
+        <a class="button primary" href="mailto:maninderjit.johar@outlook.com">Email me</a>
+        <a class="button ghost" href="https://www.linkedin.com/in/manijohar/" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a class="button ghost" href="https://github.com/maninderjit-johar" target="_blank" rel="noreferrer">GitHub</a>
       </div>
     </section>
   </main>
 </Layout>
-
-<script>
-  import * as THREE from "three";
-  import gsap from "gsap";
-  import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-  gsap.registerPlugin(ScrollTrigger);
-
-  const canvas = document.querySelector("#scroll-3d");
-  const device = document.querySelector("#device-shell");
-  const screenTitle = document.querySelector("#screen-title");
-  const screenMeta = document.querySelector("#screen-meta");
-  const screenKicker = document.querySelector(".screen-kicker");
-
-  const copy = {
-    intro: ["Solar SaaS platform", "Full-stack product engineering", "React · Next.js · Python · GraphQL"],
-    platform: ["Aerialytic", "Partner-ready product surfaces", "100+ project ecosystem · 10+ apps"],
-    reliability: ["Reliability layer", "Tests, APIs, containers", "100+ tests · Docker · Kubernetes"],
-    impact: ["MarketBox", "Booking flow outcomes", "30% satisfaction · 25% fewer errors"],
-    early: ["Aerialytic foundation", "Solar data visualization", "20% rollout speed · 97% accuracy"],
-    projects: ["Project lab", "Public work with sharper demos", "CineQuiz · EssentialUI · AspireArc"],
-    contact: ["Next chapter", "Let’s build something useful", "Frontend · Full-stack · Product engineering"],
-  };
-
-  function setScreen(step) {
-    const content = copy[step] || copy.intro;
-    if (screenKicker) screenKicker.textContent = content[0];
-    if (screenTitle) screenTitle.textContent = content[1];
-    if (screenMeta) screenMeta.textContent = content[2];
-  }
-
-  if (canvas instanceof HTMLCanvasElement && device) {
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(55, window.innerWidth / window.innerHeight, 0.1, 100);
-    camera.position.set(0, 0.25, 7.6);
-
-    const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    renderer.setSize(window.innerWidth, window.innerHeight);
-
-    const group = new THREE.Group();
-    scene.add(group);
-
-    const materialBlue = new THREE.MeshBasicMaterial({ color: 0x5eead4 });
-    const materialGreen = new THREE.MeshBasicMaterial({ color: 0x22c55e });
-    const materialAmber = new THREE.MeshBasicMaterial({ color: 0xf59e0b });
-    const lineMaterial = new THREE.LineBasicMaterial({ color: 0x60a5fa, transparent: true, opacity: 0.24 });
-
-    const nodeGeometry = new THREE.SphereGeometry(0.055, 16, 16);
-    const nodes = [];
-    for (let i = 0; i < 90; i += 1) {
-      const angle = i * 0.48;
-      const radius = 1.8 + (i % 13) * 0.17;
-      const y = Math.sin(i * 0.72) * 1.8;
-      const material = i % 11 === 0 ? materialAmber : i % 5 === 0 ? materialGreen : materialBlue;
-      const node = new THREE.Mesh(nodeGeometry, material);
-      node.position.set(Math.cos(angle) * radius, y, Math.sin(angle) * radius);
-      nodes.push(node);
-      group.add(node);
-    }
-
-    const positions = [];
-    for (let i = 2; i < nodes.length; i += 1) {
-      positions.push(
-        nodes[i - 2].position.x,
-        nodes[i - 2].position.y,
-        nodes[i - 2].position.z,
-        nodes[i].position.x,
-        nodes[i].position.y,
-        nodes[i].position.z
-      );
-    }
-    const lines = new THREE.BufferGeometry();
-    lines.setAttribute("position", new THREE.Float32BufferAttribute(positions, 3));
-    group.add(new THREE.LineSegments(lines, lineMaterial));
-
-    const ringMaterial = new THREE.MeshBasicMaterial({ color: 0x38bdf8, transparent: true, opacity: 0.2 });
-    const ring = new THREE.Mesh(new THREE.TorusGeometry(3.1, 0.012, 12, 180), ringMaterial);
-    ring.rotation.x = Math.PI / 2.6;
-    group.add(ring);
-
-    const resize = () => {
-      camera.aspect = window.innerWidth / window.innerHeight;
-      camera.updateProjectionMatrix();
-      renderer.setSize(window.innerWidth, window.innerHeight);
-    };
-    window.addEventListener("resize", resize);
-
-    gsap.set(device, { rotateX: 68, rotateZ: -8, y: 30, scale: 0.88 });
-    gsap.set(group.rotation, { x: -0.15, y: -0.4, z: 0 });
-    gsap.set(group.position, { x: 1.35, y: -0.15, z: 0 });
-
-    const chapterSteps = ["intro", "platform", "reliability", "impact", "early", "projects", "contact"];
-
-    chapterSteps.forEach((step, index) => {
-      const target = document.querySelector(`[data-step="${step}"]`);
-      if (!target) return;
-
-      ScrollTrigger.create({
-        trigger: target,
-        start: "top center",
-        end: "bottom center",
-        onEnter: () => setScreen(step),
-        onEnterBack: () => setScreen(step),
-      });
-
-      gsap.to(device, {
-        rotateX: [68, 50, 42, 56, 46, 36, 18][index],
-        rotateY: [0, -10, 12, -14, 10, 0, 0][index],
-        rotateZ: [-8, -4, 3, -5, 4, 0, 0][index],
-        x: [0, -90, 90, -95, 75, 0, 0][index],
-        y: [30, -20, -8, -18, -4, -40, -75][index],
-        scale: [0.88, 0.78, 0.76, 0.8, 0.75, 0.86, 0.92][index],
-        ease: "none",
-        scrollTrigger: {
-          trigger: target,
-          start: "top bottom",
-          end: "bottom top",
-          scrub: true,
-        },
-      });
-
-      gsap.to(group.rotation, {
-        x: [-0.15, 0.15, -0.25, 0.22, -0.1, 0.18, 0.05][index],
-        y: [-0.4, 0.75, 1.6, 2.4, 3.1, 3.9, 4.4][index],
-        z: [0, 0.1, -0.08, 0.05, -0.12, 0.08, 0][index],
-        ease: "none",
-        scrollTrigger: {
-          trigger: target,
-          start: "top bottom",
-          end: "bottom top",
-          scrub: true,
-        },
-      });
-    });
-
-    gsap.utils.toArray(".story-copy, .lab-grid a, .contact-finale").forEach((item) => {
-      gsap.from(item, {
-        opacity: 0,
-        y: 42,
-        duration: 0.8,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: item,
-          start: "top 78%",
-        },
-      });
-    });
-
-    const animate = () => {
-      ring.rotation.z += 0.002;
-      group.rotation.y += 0.0009;
-      renderer.render(scene, camera);
-      window.requestAnimationFrame(animate);
-    };
-    animate();
-  }
-</script>
