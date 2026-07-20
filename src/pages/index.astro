@@ -8,17 +8,17 @@ import Layout from "../layouts/Layout.astro";
     <div class="scroll-progress" aria-hidden="true"></div>
     <nav class="nav" aria-label="Primary navigation">
       <a class="brand" href="#home">MJ</a>
-      <button class="theme-toggle" type="button" aria-label="Switch between day and night theme" aria-pressed="false">
-        <span class="theme-icon sun" aria-hidden="true">☀</span>
-        <span class="theme-icon moon" aria-hidden="true">☾</span>
-        <span class="theme-thumb" aria-hidden="true"></span>
-      </button>
       <div class="nav-links">
         <a href="#work">Work</a>
         <a href="#systems">Systems</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
       </div>
+      <button class="theme-toggle" type="button" aria-label="Switch between day and night theme" aria-pressed="false">
+        <span class="theme-icon sun" aria-hidden="true">☀</span>
+        <span class="theme-icon moon" aria-hidden="true">☾</span>
+        <span class="theme-thumb" aria-hidden="true"></span>
+      </button>
     </nav>
 
     <section class="hero" id="home">
@@ -34,20 +34,41 @@ import Layout from "../layouts/Layout.astro";
         </div>
       </div>
 
-      <aside class="hero-card" aria-label="Career highlights">
-        <div class="availability">Open to full-stack and frontend roles</div>
-        <div class="orbit-card" aria-hidden="true">
-          <span class="orbit-dot one"></span>
-          <span class="orbit-dot two"></span>
-          <span class="orbit-dot three"></span>
-          <div>
-            <small>Engineering coverage</small>
-            <strong>UI to API to cloud delivery</strong>
+      <aside class="hero-system" aria-label="Animated full-stack development diagram">
+        <div class="system-screen">
+          <div class="screen-bar">
+            <span></span><span></span><span></span>
+            <strong>production-flow.ts</strong>
+          </div>
+          <div class="stack-flow">
+            <div class="flow-node frontend">
+              <small>Frontend</small>
+              <strong>React / Next.js</strong>
+              <em>Interfaces, state, UX</em>
+            </div>
+            <div class="flow-node api">
+              <small>API Layer</small>
+              <strong>REST + GraphQL</strong>
+              <em>Contracts, auth, integrations</em>
+            </div>
+            <div class="flow-node services">
+              <small>Backend</small>
+              <strong>Python services</strong>
+              <em>Business logic + tests</em>
+            </div>
+            <div class="flow-node data">
+              <small>Data + Cloud</small>
+              <strong>Postgres · Docker · K8s</strong>
+              <em>Storage, deploys, reliability</em>
+            </div>
+            <span class="flow-line line-one"></span>
+            <span class="flow-line line-two"></span>
+            <span class="flow-line line-three"></span>
           </div>
         </div>
         <div class="proof-grid">
           <span><strong data-count="7" data-suffix="+">0</strong> years experience</span>
-          <span><strong data-count="10" data-suffix="+">0</strong> Next.js/React apps</span>
+          <span><strong data-count="10" data-suffix="+">0</strong> product apps</span>
           <span><strong data-count="15" data-suffix="+">0</strong> backend services</span>
           <span><strong data-count="100" data-suffix="+">0</strong> reliability tests</span>
         </div>
@@ -169,23 +190,47 @@ import Layout from "../layouts/Layout.astro";
         <h2>Clear coverage across the product delivery stack.</h2>
       </div>
 
-      <div class="tech-cloud" aria-label="Technology stack">
-        <span><b>⚛</b> React</span>
-        <span><b>N</b> Next.js</span>
-        <span><b>TS</b> TypeScript</span>
-        <span><b>JS</b> JavaScript</span>
-        <span><b>GQL</b> GraphQL</span>
-        <span><b>API</b> REST</span>
-        <span><b>PY</b> Python</span>
-        <span><b>DJ</b> Django</span>
-        <span><b>FA</b> FastAPI</span>
-        <span><b>DB</b> PostgreSQL</span>
-        <span><b>MG</b> MongoDB</span>
-        <span><b>DK</b> Docker</span>
-        <span><b>K8</b> Kubernetes</span>
-        <span><b>CI</b> GitHub Actions</span>
-        <span><b>Git</b> Version Control</span>
-        <span><b>AWS</b> Cloud</span>
+      <div class="stack-groups" aria-label="Technology stack grouped by engineering area">
+        <article class="stack-group">
+          <p>Frontend</p>
+          <div class="tech-cloud">
+            <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="" loading="lazy" />React</span>
+            <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="" loading="lazy" />Next.js</span>
+            <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="" loading="lazy" />TypeScript</span>
+            <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="" loading="lazy" />JavaScript</span>
+          </div>
+        </article>
+
+        <article class="stack-group">
+          <p>Backend + APIs</p>
+          <div class="tech-cloud">
+            <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="" loading="lazy" />Python</span>
+            <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="" loading="lazy" />Django</span>
+            <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" alt="" loading="lazy" />FastAPI</span>
+            <span><b>GQL</b>GraphQL</span>
+            <span><b>API</b>REST</span>
+          </div>
+        </article>
+
+        <article class="stack-group">
+          <p>Data</p>
+          <div class="tech-cloud">
+            <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="" loading="lazy" />PostgreSQL</span>
+            <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="" loading="lazy" />MongoDB</span>
+            <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prisma/prisma-original.svg" alt="" loading="lazy" />Prisma</span>
+          </div>
+        </article>
+
+        <article class="stack-group">
+          <p>Cloud + Delivery</p>
+          <div class="tech-cloud">
+            <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="" loading="lazy" />Docker</span>
+            <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-original.svg" alt="" loading="lazy" />Kubernetes</span>
+            <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/githubactions/githubactions-original.svg" alt="" loading="lazy" />GitHub Actions</span>
+            <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="" loading="lazy" />Git</span>
+            <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="" loading="lazy" />AWS</span>
+          </div>
+        </article>
       </div>
 
       <div class="systems-grid">
@@ -259,10 +304,10 @@ import Layout from "../layouts/Layout.astro";
 <script>
   const progress = document.querySelector(".scroll-progress");
   const revealTargets = document.querySelectorAll(
-    ".hero-copy, .hero-card, .impact-band article, .section-heading, .case-card, .tech-cloud span, .systems-grid article, .project-card, .contact"
+    ".hero-copy, .hero-system, .impact-band article, .section-heading, .case-card, .stack-group, .tech-cloud span, .systems-grid article, .project-card, .contact"
   );
   const interactiveCards = document.querySelectorAll(
-    ".hero-card, .case-card, .tech-cloud span, .systems-grid article, .project-card, .impact-band article"
+    ".hero-system, .case-card, .stack-group, .tech-cloud span, .systems-grid article, .project-card, .impact-band article"
   );
   const countTargets = document.querySelectorAll("[data-count]");
   const navLinks = document.querySelectorAll(".nav-links a");
