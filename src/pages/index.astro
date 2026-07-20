@@ -8,6 +8,10 @@ import Layout from "../layouts/Layout.astro";
     <div class="scroll-progress" aria-hidden="true"></div>
     <nav class="nav" aria-label="Primary navigation">
       <a class="brand" href="#home">MJ</a>
+      <button class="theme-toggle" type="button" aria-label="Switch color theme" aria-pressed="false">
+        <span class="sun">Light</span>
+        <span class="moon">Dark</span>
+      </button>
       <div class="nav-links">
         <a href="#work">Work</a>
         <a href="#systems">Systems</a>
@@ -262,8 +266,29 @@ import Layout from "../layouts/Layout.astro";
   const countTargets = document.querySelectorAll("[data-count]");
   const navLinks = document.querySelectorAll(".nav-links a");
   const sections = [...document.querySelectorAll("section[id]")];
+  const themeToggle = document.querySelector(".theme-toggle");
 
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  const storedTheme = localStorage.getItem("portfolio-theme");
+  const systemTheme = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+  const initialTheme = storedTheme || systemTheme;
+
+  document.documentElement.dataset.theme = initialTheme;
+
+  const syncThemeToggle = () => {
+    const isLight = document.documentElement.dataset.theme === "light";
+    themeToggle?.setAttribute("aria-pressed", String(isLight));
+  };
+
+  syncThemeToggle();
+
+  themeToggle?.addEventListener("click", () => {
+    const nextTheme = document.documentElement.dataset.theme === "light" ? "dark" : "light";
+    document.documentElement.dataset.theme = nextTheme;
+    localStorage.setItem("portfolio-theme", nextTheme);
+    syncThemeToggle();
+  });
 
   const updateProgress = () => {
     if (!progress) return;
