@@ -38,39 +38,47 @@ import Layout from "../layouts/Layout.astro";
         <div class="system-screen">
           <div class="screen-bar">
             <span></span><span></span><span></span>
-            <strong>production-flow.ts</strong>
+            <strong>full-stack-delivery</strong>
           </div>
-          <div class="stack-flow">
-            <div class="flow-node frontend">
-              <small>Frontend</small>
-              <strong>React / Next.js</strong>
-              <em>Interfaces, state, UX</em>
+          <div class="delivery-lab">
+            <div class="code-window">
+              <span>const platform = ship(&#123;</span>
+              <span>&nbsp;&nbsp;ui: "React + Next.js",</span>
+              <span>&nbsp;&nbsp;api: "REST + GraphQL",</span>
+              <span>&nbsp;&nbsp;data: "Postgres",</span>
+              <span>&nbsp;&nbsp;deploy: "Docker + K8s"</span>
+              <span>&#125;);</span>
             </div>
-            <div class="flow-node api">
-              <small>API Layer</small>
-              <strong>REST + GraphQL</strong>
-              <em>Contracts, auth, integrations</em>
+
+            <div class="architecture-stack">
+              <div class="arch-layer ui">
+                <small>01</small>
+                <strong>Frontend</strong>
+                <span>React · Next.js · TypeScript</span>
+              </div>
+              <div class="arch-layer api">
+                <small>02</small>
+                <strong>API Layer</strong>
+                <span>REST · GraphQL · Auth · Integrations</span>
+              </div>
+              <div class="arch-layer service">
+                <small>03</small>
+                <strong>Backend Services</strong>
+                <span>Python · Django · FastAPI · Tests</span>
+              </div>
+              <div class="arch-layer infra">
+                <small>04</small>
+                <strong>Data + Delivery</strong>
+                <span>PostgreSQL · Docker · Kubernetes</span>
+              </div>
             </div>
-            <div class="flow-node services">
-              <small>Backend</small>
-              <strong>Python services</strong>
-              <em>Business logic + tests</em>
+
+            <div class="signal-rail" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
             </div>
-            <div class="flow-node data">
-              <small>Data + Cloud</small>
-              <strong>Postgres · Docker · K8s</strong>
-              <em>Storage, deploys, reliability</em>
-            </div>
-            <span class="flow-line line-one"></span>
-            <span class="flow-line line-two"></span>
-            <span class="flow-line line-three"></span>
           </div>
-        </div>
-        <div class="proof-grid">
-          <span><strong data-count="7" data-suffix="+">0</strong> years experience</span>
-          <span><strong data-count="10" data-suffix="+">0</strong> product apps</span>
-          <span><strong data-count="15" data-suffix="+">0</strong> backend services</span>
-          <span><strong data-count="100" data-suffix="+">0</strong> reliability tests</span>
         </div>
       </aside>
     </section>
