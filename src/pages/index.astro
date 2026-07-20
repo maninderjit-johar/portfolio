@@ -1,19 +1,261 @@
 ---
 import "../styles/global.css";
 import Layout from "../layouts/Layout.astro";
-import Navbar from "../components/Navbar.astro";
-import Hero from "../components/Hero.astro";
-import TechStack from "../components/TechStack/TechStack.astro";
-import Work from "../components/Work/Work.astro";
-import About from "../components/About/About.astro";
-import Footer from "../components/Footer.astro";
 ---
 
 <Layout>
-  <Navbar />
-  <Hero />
-  <TechStack />
-  <Work />
-  <About />
-  <Footer />
+  <main class="site-shell">
+    <nav class="top-nav" aria-label="Primary navigation">
+      <a class="brand" href="#home" aria-label="Maninderjit Johar home">MJ</a>
+      <div class="nav-links">
+        <a href="#impact">Impact</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+
+    <section class="hero scene-section" id="home" aria-label="Portfolio introduction">
+      <canvas id="stellar-canvas" aria-hidden="true"></canvas>
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Full-stack developer · Product engineer</p>
+          <h1>Building solar SaaS, partner platforms, and polished web experiences.</h1>
+          <p class="hero-text">
+            I turn complex product requirements into scalable interfaces, APIs, and deployment-ready systems across React, Next.js, TypeScript, Python, GraphQL, Docker, and Kubernetes.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#experience">Explore the story</a>
+            <a class="button secondary" href="https://github.com/maninderjit-johar" target="_blank" rel="noreferrer">View GitHub</a>
+          </div>
+        </div>
+
+        <aside class="mission-panel" aria-label="Profile highlights">
+          <p class="panel-label">Current focus</p>
+          <h2>Aerialytic</h2>
+          <p>Rehired after an earlier frontend role, now contributing across full-stack solar SaaS workflows and partner-ready product surfaces.</p>
+          <div class="signal-grid">
+            <span><strong>7+</strong> years</span>
+            <span><strong>10+</strong> Next.js/React apps</span>
+            <span><strong>15+</strong> backend services</span>
+            <span><strong>100+</strong> tests</span>
+          </div>
+        </aside>
+      </div>
+      <a class="scroll-cue" href="#impact" aria-label="Scroll to impact section">Scroll</a>
+    </section>
+
+    <section class="impact-section" id="impact">
+      <div class="section-heading">
+        <p class="eyebrow">Impact signals</p>
+        <h2>Numbers that point to product value.</h2>
+      </div>
+      <div class="metric-grid">
+        <article>
+          <strong>30%</strong>
+          <span>Higher customer satisfaction after booking and console redesign work.</span>
+        </article>
+        <article>
+          <strong>25%</strong>
+          <span>Reduction in scheduling errors by consolidating fragmented booking flows.</span>
+        </article>
+        <article>
+          <strong>23%</strong>
+          <span>Sales increase within two months after improving onboarding and adoption.</span>
+        </article>
+        <article>
+          <strong>97%</strong>
+          <span>Object-detection accuracy supported through data-processing improvements.</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="story-section" id="experience">
+      <div class="section-heading sticky-heading">
+        <p class="eyebrow">Experience arc</p>
+        <h2>Frontend craft expanded into full-stack product ownership.</h2>
+      </div>
+
+      <div class="timeline">
+        <article class="timeline-card">
+          <p class="date">June 2024 - Present</p>
+          <h3>Full-Stack Developer · Aerialytic</h3>
+          <ul>
+            <li>Rejoined Aerialytic after a previous frontend role and expanded into full-stack product engineering across a 100+ project solar SaaS ecosystem.</li>
+            <li>Delivered 10+ Next.js and React applications for lead capture, customer workflows, proposals, admin operations, and partner-facing experiences.</li>
+            <li>Implemented REST and GraphQL workflows across 15+ backend services for solar design, production modeling, savings calculations, lead management, and proposal generation.</li>
+            <li>Strengthened reliability with 100+ Python unit/integration tests, golden-test scenarios, Jest, and Playwright coverage.</li>
+            <li>Containerized and deployed services with Docker, Kubernetes, GitHub Actions, and GitOps workflows for multi-environment releases.</li>
+          </ul>
+        </article>
+
+        <article class="timeline-card">
+          <p class="date">Nov 2021 - Jan 2024</p>
+          <h3>Full-Stack Developer · MarketBox</h3>
+          <ul>
+            <li>Redesigned booking and console interfaces with React and Material UI, contributing to 30% higher customer satisfaction.</li>
+            <li>Consolidated scheduling screens into a smoother workflow, reducing scheduling errors by 25%.</li>
+            <li>Improved onboarding experiences that contributed to a 23% sales increase within two months.</li>
+            <li>Reduced application loading time from 6 seconds to 3.5 seconds through React performance work.</li>
+          </ul>
+        </article>
+
+        <article class="timeline-card">
+          <p class="date">Dec 2018 - Nov 2021</p>
+          <h3>Frontend Developer · Aerialytic</h3>
+          <ul>
+            <li>Built data-rich React interfaces for solar-energy software and GIS-driven workflows.</li>
+            <li>Improved feature rollout speed by 20% through reusable frontend patterns and cross-team delivery.</li>
+            <li>Supported object-detection workflows that reached 97% accuracy through Python and TensorFlow data-processing improvements.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="systems-section">
+      <div class="section-heading">
+        <p class="eyebrow">Engineering range</p>
+        <h2>From interface detail to production infrastructure.</h2>
+      </div>
+      <div class="systems-grid">
+        <article>
+          <h3>Frontend systems</h3>
+          <p>React, Next.js, TypeScript, Apollo Client, Material UI, Tailwind CSS, state management, responsive layouts, and reusable component architecture.</p>
+        </article>
+        <article>
+          <h3>APIs and data</h3>
+          <p>REST, GraphQL, Django, FastAPI, Node.js, PostgreSQL, MongoDB, Prisma, Python pipelines, and calculation-heavy product workflows.</p>
+        </article>
+        <article>
+          <h3>Cloud delivery</h3>
+          <p>Docker, Kubernetes, GitHub Actions, GitOps, AWS Lambda, DynamoDB, observability-aware workflows, and release-focused engineering habits.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="projects-section" id="projects">
+      <div class="section-heading">
+        <p class="eyebrow">Public work</p>
+        <h2>Projects being shaped into recruiter-ready case studies.</h2>
+      </div>
+      <div class="project-grid">
+        <a class="project-card" href="https://github.com/maninderjit-johar/cinequiz" target="_blank" rel="noreferrer">
+          <span>01</span>
+          <h3>CineQuiz</h3>
+          <p>Interactive movie-guessing experience with React, TypeScript, Redux Toolkit, Radix UI, async data, and responsive game flow.</p>
+        </a>
+        <a class="project-card" href="https://github.com/maninderjit-johar/essentialui" target="_blank" rel="noreferrer">
+          <span>02</span>
+          <h3>EssentialUI</h3>
+          <p>Reusable React component library with theme context, package-ready builds, and a responsive sidebar system.</p>
+        </a>
+        <a class="project-card" href="https://github.com/maninderjit-johar/aspirearc" target="_blank" rel="noreferrer">
+          <span>03</span>
+          <h3>AspireArc</h3>
+          <p>Full-stack fitness logger using Next.js, Prisma, PostgreSQL, Docker, and relational workout history modeling.</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <p class="eyebrow">Let’s build</p>
+      <h2>Have a product challenge worth solving?</h2>
+      <p>I’m open to full-stack and frontend engineering opportunities where product thinking, technical quality, and user experience matter.</p>
+      <div class="hero-actions">
+        <a class="button primary" href="mailto:maninderjit.johar@outlook.com">Email me</a>
+        <a class="button secondary" href="https://www.linkedin.com/in/manijohar/" target="_blank" rel="noreferrer">LinkedIn</a>
+      </div>
+    </section>
+  </main>
 </Layout>
+
+<script>
+  import * as THREE from "three";
+
+  const canvas = document.querySelector("#stellar-canvas");
+
+  if (canvas instanceof HTMLCanvasElement) {
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(55, window.innerWidth / window.innerHeight, 0.1, 100);
+    camera.position.set(0, 0, 8);
+
+    const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setSize(window.innerWidth, window.innerHeight);
+
+    const group = new THREE.Group();
+    scene.add(group);
+
+    const nodeGeometry = new THREE.SphereGeometry(0.045, 16, 16);
+    const nodeMaterial = new THREE.MeshBasicMaterial({ color: 0x7dd3fc });
+    const accentMaterial = new THREE.MeshBasicMaterial({ color: 0x22c55e });
+    const lineMaterial = new THREE.LineBasicMaterial({ color: 0x3b82f6, transparent: true, opacity: 0.32 });
+
+    const nodes = [];
+    for (let i = 0; i < 78; i += 1) {
+      const radius = 1.8 + Math.random() * 2.8;
+      const angle = i * 0.55;
+      const y = (Math.random() - 0.5) * 4.8;
+      const mesh = new THREE.Mesh(nodeGeometry, i % 9 === 0 ? accentMaterial : nodeMaterial);
+      mesh.position.set(Math.cos(angle) * radius, y, Math.sin(angle) * radius);
+      nodes.push(mesh);
+      group.add(mesh);
+    }
+
+    const linePositions = [];
+    for (let i = 1; i < nodes.length; i += 1) {
+      linePositions.push(
+        nodes[i - 1].position.x,
+        nodes[i - 1].position.y,
+        nodes[i - 1].position.z,
+        nodes[i].position.x,
+        nodes[i].position.y,
+        nodes[i].position.z
+      );
+    }
+
+    const lineGeometry = new THREE.BufferGeometry();
+    lineGeometry.setAttribute("position", new THREE.Float32BufferAttribute(linePositions, 3));
+    group.add(new THREE.LineSegments(lineGeometry, lineMaterial));
+
+    const ringGeometry = new THREE.TorusGeometry(3.4, 0.008, 12, 160);
+    const ringMaterial = new THREE.MeshBasicMaterial({ color: 0x60a5fa, transparent: true, opacity: 0.28 });
+    const rings = [0, 1, 2].map((_, index) => {
+      const ring = new THREE.Mesh(ringGeometry, ringMaterial);
+      ring.rotation.x = Math.PI / (2.2 + index * 0.2);
+      ring.rotation.y = index * 0.62;
+      group.add(ring);
+      return ring;
+    });
+
+    const pointer = { x: 0, y: 0 };
+
+    window.addEventListener("pointermove", (event) => {
+      pointer.x = (event.clientX / window.innerWidth - 0.5) * 2;
+      pointer.y = (event.clientY / window.innerHeight - 0.5) * 2;
+    });
+
+    window.addEventListener("resize", () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+
+    const tick = () => {
+      const scrollProgress = Math.min(window.scrollY / Math.max(window.innerHeight, 1), 2);
+      group.rotation.y += 0.0025;
+      group.rotation.x = pointer.y * 0.08 + scrollProgress * 0.18;
+      group.position.x = pointer.x * 0.22;
+      group.position.y = -scrollProgress * 0.35;
+
+      rings.forEach((ring, index) => {
+        ring.rotation.z += 0.0015 + index * 0.0008;
+      });
+
+      renderer.render(scene, camera);
+      window.requestAnimationFrame(tick);
+    };
+
+    tick();
+  }
+</script>
