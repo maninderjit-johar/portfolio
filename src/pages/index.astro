@@ -40,47 +40,63 @@ import Layout from "../layouts/Layout.astro";
             <span></span><span></span><span></span>
             <strong>full-stack-delivery</strong>
           </div>
-          <div class="delivery-map">
-            <div class="product-preview">
-              <div class="preview-toolbar">
-                <span></span>
-                <strong>Product UI</strong>
-              </div>
-              <div class="preview-grid">
-                <span class="preview-card hero-tile"></span>
-                <span class="preview-card metric-tile"></span>
-                <span class="preview-card chart-tile"></span>
-                <span class="preview-card list-tile"></span>
-              </div>
+          <div class="pipeline-map">
+            <div class="pipeline-track" aria-hidden="true">
+              <span class="track-line"></span>
+              <span class="glow-package">
+                <i></i>
+              </span>
             </div>
 
-            <div class="service-orbit" aria-hidden="true">
-              <span class="orbit-ring"></span>
-              <span class="request-dot one"></span>
-              <span class="request-dot two"></span>
-              <span class="request-dot three"></span>
-              <div class="service-core">
-                <i class="devicon-graphql-plain"></i>
-                <strong>API</strong>
-                <small>REST · GraphQL</small>
+            <div class="pipeline-stage stage-frontend">
+              <span class="stage-icon"><i class="devicon-react-original"></i></span>
+              <small>01 · Frontend</small>
+              <strong>Build product UI</strong>
+              <em>React · Next.js · TypeScript</em>
+              <div class="stage-preview ui-preview" aria-hidden="true">
+                <span></span><span></span><span></span>
               </div>
             </div>
 
-            <div class="delivery-column services">
-              <span><i class="devicon-python-plain"></i>Python services</span>
-              <span><i class="devicon-fastapi-plain"></i>FastAPI workflows</span>
-              <span><i class="devicon-django-plain"></i>Django admin</span>
+            <div class="pipeline-stage stage-api">
+              <span class="stage-icon"><i class="devicon-graphql-plain"></i></span>
+              <small>02 · Backend API</small>
+              <strong>Shape contracts</strong>
+              <em>REST · GraphQL · Auth</em>
+              <div class="stage-preview api-preview" aria-hidden="true">
+                <span>GET</span><span>POST</span><span>200</span>
+              </div>
             </div>
 
-            <div class="delivery-column data-cloud">
-              <span><i class="devicon-postgresql-plain"></i>PostgreSQL</span>
-              <span><i class="devicon-docker-plain"></i>Docker</span>
-              <span><i class="devicon-kubernetes-plain"></i>Kubernetes</span>
+            <div class="pipeline-stage stage-data">
+              <span class="stage-icon"><i class="devicon-postgresql-plain"></i></span>
+              <small>03 · Database</small>
+              <strong>Model data</strong>
+              <em>PostgreSQL · Prisma · MongoDB</em>
+              <div class="stage-preview data-preview" aria-hidden="true">
+                <span></span><span></span><span></span>
+              </div>
             </div>
 
-            <span class="flow-path path-ui-api"></span>
-            <span class="flow-path path-api-services"></span>
-            <span class="flow-path path-services-data"></span>
+            <div class="pipeline-stage stage-test">
+              <span class="stage-icon"><i class="devicon-playwright-plain"></i></span>
+              <small>04 · Testing</small>
+              <strong>Verify behavior</strong>
+              <em>Unit · Integration · Playwright</em>
+              <div class="stage-preview test-preview" aria-hidden="true">
+                <span>✓ API</span><span>✓ UI</span><span>✓ Flow</span>
+              </div>
+            </div>
+
+            <div class="pipeline-stage stage-deploy">
+              <span class="stage-icon"><i class="devicon-kubernetes-plain"></i></span>
+              <small>05 · Deployment</small>
+              <strong>Ship reliably</strong>
+              <em>Docker · Kubernetes · CI/CD</em>
+              <div class="stage-preview deploy-preview" aria-hidden="true">
+                <span></span><span></span><span></span>
+              </div>
+            </div>
           </div>
         </div>
       </aside>

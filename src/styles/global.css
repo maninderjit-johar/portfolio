@@ -500,6 +500,288 @@ h3 {
   margin-left: 0.35rem;
 }
 
+.pipeline-map {
+  position: relative;
+  display: grid;
+  min-height: 18.8rem;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 1fr 1fr;
+  gap: 0.85rem;
+  padding-top: 1rem;
+}
+
+.pipeline-track {
+  position: absolute;
+  inset: 1rem 0.75rem;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.track-line,
+.pipeline-track::before {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background:
+    linear-gradient(90deg, transparent, color-mix(in srgb, var(--accent) 45%, transparent), color-mix(in srgb, var(--accent-3) 45%, transparent), transparent);
+  content: "";
+}
+
+.track-line {
+  top: 25%;
+}
+
+.pipeline-track::before {
+  top: 75%;
+}
+
+.pipeline-track::after {
+  position: absolute;
+  top: 25%;
+  bottom: 25%;
+  left: 50%;
+  width: 2px;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--accent-3) 42%, transparent), color-mix(in srgb, var(--accent) 42%, transparent));
+  content: "";
+}
+
+.track-line::before,
+.track-line::after {
+  position: absolute;
+  inset: -0.42rem auto auto;
+  width: 0.86rem;
+  height: 0.86rem;
+  border: 1px solid color-mix(in srgb, var(--accent) 50%, transparent);
+  border-radius: 50%;
+  background: var(--panel-strong);
+  content: "";
+  transform: translateY(-50%);
+}
+
+.track-line::before {
+  left: 0.5rem;
+}
+
+.track-line::after {
+  right: 0.5rem;
+}
+
+.glow-package {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 8;
+  display: grid;
+  width: 2.35rem;
+  height: 2.35rem;
+  place-items: center;
+  border-radius: 14px;
+  background:
+    radial-gradient(circle at 35% 24%, rgba(255, 255, 255, 0.95), transparent 0.45rem),
+    linear-gradient(135deg, var(--accent), var(--accent-3));
+  box-shadow:
+    0 0 0 0.34rem color-mix(in srgb, var(--accent) 13%, transparent),
+    0 0 34px color-mix(in srgb, var(--accent) 62%, transparent),
+    0 0 70px color-mix(in srgb, var(--accent-3) 30%, transparent);
+  transform: translate(-50%, -50%);
+  animation: package-route 8s cubic-bezier(0.7, 0, 0.3, 1) infinite;
+}
+
+.glow-package i {
+  width: 0.84rem;
+  height: 0.84rem;
+  border: 2px solid rgba(255, 255, 255, 0.86);
+  border-radius: 0.22rem;
+  transform: rotate(45deg);
+}
+
+.pipeline-stage {
+  position: relative;
+  z-index: 3;
+  display: grid;
+  align-content: start;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background:
+    linear-gradient(145deg, color-mix(in srgb, var(--surface) 92%, transparent), color-mix(in srgb, var(--accent) 4%, transparent)),
+    var(--panel-strong);
+  box-shadow: 0 18px 42px color-mix(in srgb, var(--shadow) 74%, transparent);
+  padding: 0.82rem;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease;
+}
+
+.pipeline-stage::before {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 0%, color-mix(in srgb, var(--accent) 20%, transparent), transparent 46%);
+  content: "";
+  opacity: 0;
+  animation: stage-glow 8s ease-in-out infinite;
+}
+
+.stage-frontend {
+  grid-column: 1 / span 2;
+  grid-row: 1;
+}
+
+.stage-api {
+  grid-column: 3 / span 2;
+  grid-row: 1;
+}
+
+.stage-data {
+  grid-column: 5 / span 2;
+  grid-row: 1;
+}
+
+.stage-test {
+  grid-column: 2 / span 2;
+  grid-row: 2;
+}
+
+.stage-deploy {
+  grid-column: 4 / span 2;
+  grid-row: 2;
+}
+
+.stage-api::before {
+  animation-delay: 1.6s;
+}
+
+.stage-data::before {
+  animation-delay: 3.2s;
+}
+
+.stage-test::before {
+  animation-delay: 4.8s;
+}
+
+.stage-deploy::before {
+  animation-delay: 6.4s;
+}
+
+.stage-icon {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  width: 2rem;
+  height: 2rem;
+  place-items: center;
+  border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
+  border-radius: 50%;
+  background: #ffffff;
+  color: var(--accent);
+  font-size: 1.12rem;
+}
+
+.pipeline-stage small,
+.pipeline-stage strong,
+.pipeline-stage em,
+.stage-preview {
+  position: relative;
+  z-index: 1;
+}
+
+.pipeline-stage small {
+  margin-top: 0.62rem;
+  color: var(--accent);
+  font-size: 0.64rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.pipeline-stage strong {
+  margin-top: 0.18rem;
+  font-size: 0.98rem;
+  line-height: 1.12;
+}
+
+.pipeline-stage em {
+  margin-top: 0.2rem;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-style: normal;
+}
+
+.stage-preview {
+  display: flex;
+  min-height: 2.15rem;
+  align-items: center;
+  gap: 0.28rem;
+  margin-top: 0.62rem;
+}
+
+.ui-preview span,
+.data-preview span,
+.deploy-preview span {
+  display: block;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-3));
+  opacity: 0.72;
+  animation: preview-pulse 2.8s ease-in-out infinite;
+}
+
+.ui-preview span:nth-child(1) {
+  width: 36%;
+  height: 2rem;
+}
+
+.ui-preview span:nth-child(2) {
+  width: 24%;
+  height: 1.35rem;
+  animation-delay: 0.2s;
+}
+
+.ui-preview span:nth-child(3) {
+  width: 18%;
+  height: 0.62rem;
+  animation-delay: 0.4s;
+}
+
+.api-preview span,
+.test-preview span {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--surface) 70%, transparent);
+  color: var(--soft);
+  font-size: 0.6rem;
+  font-weight: 900;
+  padding: 0.24rem 0.34rem;
+}
+
+.data-preview,
+.deploy-preview {
+  align-items: end;
+}
+
+.data-preview span,
+.deploy-preview span {
+  width: 1.1rem;
+  height: 1.4rem;
+  border-radius: 0.55rem 0.55rem 0.2rem 0.2rem;
+}
+
+.data-preview span:nth-child(2),
+.deploy-preview span:nth-child(2) {
+  height: 2rem;
+  animation-delay: 0.2s;
+}
+
+.data-preview span:nth-child(3),
+.deploy-preview span:nth-child(3) {
+  height: 1.65rem;
+  animation-delay: 0.4s;
+}
+
+.deploy-preview span {
+  border-radius: 0.35rem;
+}
+
 .delivery-map {
   position: relative;
   display: grid;
@@ -1216,6 +1498,56 @@ h3 {
   }
 }
 
+@keyframes package-route {
+  0%,
+  8% {
+    left: 9%;
+    top: 25%;
+  }
+
+  20%,
+  28% {
+    left: 50%;
+    top: 25%;
+  }
+
+  40%,
+  48% {
+    left: 91%;
+    top: 25%;
+  }
+
+  60%,
+  68% {
+    left: 34%;
+    top: 75%;
+  }
+
+  80%,
+  88% {
+    left: 66%;
+    top: 75%;
+  }
+
+  100% {
+    left: 9%;
+    top: 25%;
+  }
+}
+
+@keyframes stage-glow {
+  0%,
+  16%,
+  100% {
+    opacity: 0;
+  }
+
+  6%,
+  11% {
+    opacity: 1;
+  }
+}
+
 @keyframes grow-bar {
   0%,
   100% {
@@ -1315,6 +1647,11 @@ h3 {
   }
 
   .preview-card::after,
+  .glow-package,
+  .pipeline-stage::before,
+  .ui-preview span,
+  .data-preview span,
+  .deploy-preview span,
   .metric-tile::before,
   .chart-tile::before,
   .list-tile::before,
