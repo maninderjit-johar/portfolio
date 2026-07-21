@@ -1266,8 +1266,15 @@ h3 {
 
 .systems-grid article,
 .project-card {
-  min-height: 17rem;
   padding: 1.2rem;
+}
+
+.systems-grid article {
+  min-height: 13.5rem;
+}
+
+.project-card {
+  min-height: 17rem;
 }
 
 .project-preview {
@@ -1391,6 +1398,10 @@ h3 {
 .systems-grid h3,
 .project-card h3 {
   margin-top: 3.2rem;
+}
+
+.systems-grid h3 {
+  margin-top: 2.2rem;
 }
 
 .project-card .project-preview + span + h3 {
