@@ -284,8 +284,8 @@ li + li {
 .hero {
   display: grid;
   min-height: 100svh;
-  grid-template-columns: minmax(0, 0.95fr) minmax(460px, 0.72fr);
-  gap: 2.75rem;
+  grid-template-columns: minmax(0, 0.92fr) minmax(420px, 0.64fr);
+  gap: 3rem;
   align-items: center;
   padding: 7rem 0 5rem;
 }
@@ -305,8 +305,8 @@ li + li {
 h1 {
   max-width: 820px;
   margin-top: 1rem;
-  font-size: clamp(3rem, 5.7vw, 5.5rem);
-  line-height: 0.94;
+  font-size: clamp(3rem, 5.15vw, 5rem);
+  line-height: 0.98;
   letter-spacing: 0;
 }
 
@@ -464,7 +464,7 @@ h3 {
   background:
     linear-gradient(180deg, color-mix(in srgb, var(--surface) 96%, transparent), color-mix(in srgb, var(--surface-2) 76%, transparent)),
     var(--panel-strong);
-  min-height: 21.5rem;
+  min-height: 24rem;
   padding: 0.8rem;
   isolation: isolate;
 }
@@ -503,78 +503,69 @@ h3 {
 .pipeline-map {
   position: relative;
   display: grid;
-  min-height: 18.8rem;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: 1fr 1fr;
-  gap: 0.85rem;
-  padding-top: 1rem;
+  min-height: 21rem;
+  grid-template-columns: 1fr;
+  gap: 0.58rem;
+  padding: 0.85rem 0 0.2rem 2.35rem;
 }
 
 .pipeline-track {
   position: absolute;
-  inset: 1rem 0.75rem;
-  z-index: 5;
+  inset: 1.2rem auto 0.95rem 1rem;
+  z-index: 6;
+  width: 2rem;
   pointer-events: none;
 }
 
 .track-line,
 .pipeline-track::before {
   position: absolute;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background:
-    linear-gradient(90deg, transparent, color-mix(in srgb, var(--accent) 45%, transparent), color-mix(in srgb, var(--accent-3) 45%, transparent), transparent);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--accent) 58%, transparent), color-mix(in srgb, var(--accent-3) 58%, transparent));
   content: "";
 }
 
 .track-line {
-  top: 25%;
+  transform: translateX(-50%);
 }
 
 .pipeline-track::before {
-  top: 75%;
-}
-
-.pipeline-track::after {
-  position: absolute;
-  top: 25%;
-  bottom: 25%;
-  left: 50%;
-  width: 2px;
-  background: linear-gradient(180deg, color-mix(in srgb, var(--accent-3) 42%, transparent), color-mix(in srgb, var(--accent) 42%, transparent));
-  content: "";
+  filter: blur(8px);
+  opacity: 0.45;
 }
 
 .track-line::before,
 .track-line::after {
   position: absolute;
-  inset: -0.42rem auto auto;
+  inset: auto auto auto 50%;
   width: 0.86rem;
   height: 0.86rem;
   border: 1px solid color-mix(in srgb, var(--accent) 50%, transparent);
   border-radius: 50%;
   background: var(--panel-strong);
   content: "";
-  transform: translateY(-50%);
+  transform: translate(-50%, -50%);
 }
 
 .track-line::before {
-  left: 0.5rem;
+  top: 0;
 }
 
 .track-line::after {
-  right: 0.5rem;
+  top: 100%;
 }
 
 .glow-package {
   position: absolute;
-  top: 50%;
-  left: 0;
+  top: 0;
+  left: 50%;
   z-index: 8;
   display: grid;
-  width: 2.35rem;
-  height: 2.35rem;
+  width: 2.05rem;
+  height: 2.05rem;
   place-items: center;
   border-radius: 14px;
   background:
@@ -600,7 +591,10 @@ h3 {
   position: relative;
   z-index: 3;
   display: grid;
-  align-content: start;
+  min-height: 4rem;
+  grid-template-columns: 2.55rem minmax(0, 1fr) minmax(5.2rem, 0.42fr);
+  gap: 0.5rem 0.72rem;
+  align-items: center;
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: 18px;
@@ -608,7 +602,7 @@ h3 {
     linear-gradient(145deg, color-mix(in srgb, var(--surface) 92%, transparent), color-mix(in srgb, var(--accent) 4%, transparent)),
     var(--panel-strong);
   box-shadow: 0 18px 42px color-mix(in srgb, var(--shadow) 74%, transparent);
-  padding: 0.82rem;
+  padding: 0.62rem 0.7rem;
   transition:
     transform 180ms ease,
     border-color 180ms ease;
@@ -624,28 +618,23 @@ h3 {
 }
 
 .stage-frontend {
-  grid-column: 1 / span 2;
-  grid-row: 1;
+  grid-column: 1;
 }
 
 .stage-api {
-  grid-column: 3 / span 2;
-  grid-row: 1;
+  grid-column: 1;
 }
 
 .stage-data {
-  grid-column: 5 / span 2;
-  grid-row: 1;
+  grid-column: 1;
 }
 
 .stage-test {
-  grid-column: 2 / span 2;
-  grid-row: 2;
+  grid-column: 1;
 }
 
 .stage-deploy {
-  grid-column: 4 / span 2;
-  grid-row: 2;
+  grid-column: 1;
 }
 
 .stage-api::before {
@@ -668,14 +657,15 @@ h3 {
   position: relative;
   z-index: 1;
   display: grid;
-  width: 2rem;
-  height: 2rem;
+  width: 2.15rem;
+  height: 2.15rem;
   place-items: center;
   border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
   border-radius: 50%;
   background: #ffffff;
   color: var(--accent);
   font-size: 1.12rem;
+  grid-row: span 3;
 }
 
 .pipeline-stage small,
@@ -687,7 +677,6 @@ h3 {
 }
 
 .pipeline-stage small {
-  margin-top: 0.62rem;
   color: var(--accent);
   font-size: 0.64rem;
   font-weight: 950;
@@ -696,13 +685,13 @@ h3 {
 }
 
 .pipeline-stage strong {
-  margin-top: 0.18rem;
+  margin-top: -0.1rem;
   font-size: 0.98rem;
   line-height: 1.12;
 }
 
 .pipeline-stage em {
-  margin-top: 0.2rem;
+  margin-top: -0.1rem;
   color: var(--muted);
   font-size: 0.72rem;
   font-style: normal;
@@ -713,7 +702,10 @@ h3 {
   min-height: 2.15rem;
   align-items: center;
   gap: 0.28rem;
-  margin-top: 0.62rem;
+  grid-column: 3;
+  grid-row: 1 / span 3;
+  margin-top: 0;
+  justify-content: flex-end;
 }
 
 .ui-preview span,
@@ -749,7 +741,7 @@ h3 {
   border-radius: 999px;
   background: color-mix(in srgb, var(--surface) 70%, transparent);
   color: var(--soft);
-  font-size: 0.6rem;
+  font-size: 0.56rem;
   font-weight: 900;
   padding: 0.24rem 0.34rem;
 }
@@ -761,20 +753,20 @@ h3 {
 
 .data-preview span,
 .deploy-preview span {
-  width: 1.1rem;
-  height: 1.4rem;
+  width: 0.9rem;
+  height: 1.22rem;
   border-radius: 0.55rem 0.55rem 0.2rem 0.2rem;
 }
 
 .data-preview span:nth-child(2),
 .deploy-preview span:nth-child(2) {
-  height: 2rem;
+  height: 1.75rem;
   animation-delay: 0.2s;
 }
 
 .data-preview span:nth-child(3),
 .deploy-preview span:nth-child(3) {
-  height: 1.65rem;
+  height: 1.45rem;
   animation-delay: 0.4s;
 }
 
@@ -1501,37 +1493,37 @@ h3 {
 @keyframes package-route {
   0%,
   8% {
-    left: 9%;
-    top: 25%;
+    left: 50%;
+    top: 6%;
   }
 
   20%,
   28% {
     left: 50%;
-    top: 25%;
+    top: 27%;
   }
 
   40%,
   48% {
-    left: 91%;
-    top: 25%;
+    left: 50%;
+    top: 48%;
   }
 
   60%,
   68% {
-    left: 34%;
-    top: 75%;
+    left: 50%;
+    top: 69%;
   }
 
   80%,
   88% {
-    left: 66%;
-    top: 75%;
+    left: 50%;
+    top: 91%;
   }
 
   100% {
-    left: 9%;
-    top: 25%;
+    left: 50%;
+    top: 6%;
   }
 }
 
