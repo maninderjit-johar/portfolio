@@ -24,9 +24,9 @@ import Layout from "../layouts/Layout.astro";
     <section class="hero" id="home">
       <div class="hero-copy">
         <p class="eyebrow">Maninderjit Johar · Full-stack engineer</p>
-        <h1>Product systems, built from interface to infrastructure.</h1>
+        <h1>Full-stack product engineering, from UI to production.</h1>
         <p class="hero-text">
-          7+ years turning complex SaaS workflows into production-ready releases — polished React/Next.js interfaces, reliable API and data layers, automated test coverage, and Docker/Kubernetes delivery.
+          7+ years building React and Next.js interfaces, backend APIs, database-backed workflows, test coverage, and Docker/Kubernetes deployments for real SaaS products.
         </p>
         <div class="hero-actions">
           <a class="button primary" href="#work">View experience</a>
@@ -114,6 +114,8 @@ import Layout from "../layouts/Layout.astro";
         <span>Docker</span>
         <span>Kubernetes</span>
         <span>GitHub Actions</span>
+        <span>Grafana</span>
+        <span>Google Cloud Logs</span>
       </div>
       <div aria-hidden="true">
         <span>React</span>
@@ -126,6 +128,8 @@ import Layout from "../layouts/Layout.astro";
         <span>Docker</span>
         <span>Kubernetes</span>
         <span>GitHub Actions</span>
+        <span>Grafana</span>
+        <span>Google Cloud Logs</span>
       </div>
     </div>
 
@@ -151,7 +155,7 @@ import Layout from "../layouts/Layout.astro";
     <section class="section" id="work">
       <div class="section-heading">
         <p class="eyebrow">Selected experience</p>
-        <h2>Recent work, framed around business and engineering outcomes.</h2>
+        <h2>Recent work across product features, APIs, testing, and releases.</h2>
       </div>
 
       <div class="case-grid timeline-grid">
@@ -160,9 +164,9 @@ import Layout from "../layouts/Layout.astro";
             <span>June 2024 - Present</span>
             <span>Aerialytic</span>
           </div>
-          <h3>Full-stack platform engineering for solar SaaS workflows.</h3>
+          <h3>Full-stack engineering across Aerialytic’s solar software platform.</h3>
           <p>
-            Rejoined Aerialytic after an earlier frontend role and expanded into full-stack product engineering across lead capture, customer workflows, proposals, admin operations, and partner-facing experiences.
+            Rejoined Aerialytic after an earlier frontend role and moved deeper into full-stack product work across lead capture, customer workflows, proposals, admin tools, and partner-facing experiences.
           </p>
           <div class="case-stats">
             <span><strong>100+</strong> project ecosystem</span>
@@ -171,10 +175,11 @@ import Layout from "../layouts/Layout.astro";
             <span><strong>100+</strong> Python/API tests</span>
           </div>
           <ul>
-            <li>Modularized CRM capabilities into embeddable partner-ready experiences with secure sessions and configuration-driven flows.</li>
-            <li>Implemented REST and GraphQL workflows for solar design, production modeling, savings calculations, lead management, and proposal generation.</li>
-            <li>Strengthened release confidence with Python unit/integration tests, golden-test scenarios, Jest and Playwright coverage.</li>
-            <li>Containerized and deployed services with Docker, Kubernetes, GitHub Actions, GitOps workflows, and multi-environment release practices.</li>
+            <li>Built reusable CRM flows that partners could embed without a separate one-off implementation each time.</li>
+            <li>Implemented REST and GraphQL paths for solar design, production modeling, savings calculations, lead management, and proposal generation.</li>
+            <li>Added Python unit/integration tests, golden-test scenarios, Jest checks, and Playwright coverage around calculation-heavy and user-facing flows.</li>
+            <li>Containerized and released services through Docker, Kubernetes, GitHub Actions, GitOps workflows, and multi-environment deployment practices.</li>
+            <li>Leveraged Grafana dashboards and Google Cloud Logs to investigate production issues, trace API behavior, and validate fixes across Docker/Kubernetes-based SaaS services.</li>
           </ul>
         </article>
 
@@ -217,7 +222,7 @@ import Layout from "../layouts/Layout.astro";
         <p class="eyebrow">Full-stack toolkit</p>
         <h2>Tools I use across the product delivery stack.</h2>
         <p>
-          A grouped view of the technologies I work with across frontend, APIs, data, testing, deployment, and version-controlled delivery.
+          The tools I reach for when a feature needs to move from a screen, through the backend, into a tested and observable release.
         </p>
       </div>
 
@@ -264,13 +269,15 @@ import Layout from "../layouts/Layout.astro";
         </article>
 
         <article class="stack-group">
-          <p>Deployment + Delivery</p>
+          <p>Deployment + Observability</p>
           <div class="tech-cloud">
             <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="" loading="lazy" />Docker</span>
             <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-original.svg" alt="" loading="lazy" />Kubernetes</span>
             <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/githubactions/githubactions-original.svg" alt="" loading="lazy" />GitHub Actions</span>
             <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="" loading="lazy" />Git</span>
             <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="" loading="lazy" />AWS</span>
+            <span><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/grafana/grafana-original.svg" alt="" loading="lazy" />Grafana</span>
+            <span><b>GCL</b>Google Cloud Logs</span>
             <span><b>CD</b>CI/CD</span>
           </div>
         </article>
@@ -280,7 +287,7 @@ import Layout from "../layouts/Layout.astro";
         <p class="eyebrow">Delivery ownership</p>
         <h3>From product requirements to reliable releases.</h3>
         <p>
-          I work across the layers that turn a feature into a dependable production system: user experience, API contracts, data modeling, test coverage, deployment, and iteration.
+          I like owning the messy middle of product work: clarifying the feature, building the UI, wiring the API, testing the edge cases, shipping it, and checking what happens after release.
         </p>
       </div>
 
@@ -307,13 +314,13 @@ import Layout from "../layouts/Layout.astro";
         </article>
         <article>
           <span>05</span>
-          <h3>Deployment that holds up</h3>
-          <p>Docker, Kubernetes, GitHub Actions, GitOps, CI/CD, environment configuration, and multi-environment release practices.</p>
+          <h3>Releases I can trace</h3>
+          <p>Docker, Kubernetes, GitHub Actions, GitOps, CI/CD, environment configuration, Grafana dashboards, and Google Cloud Logs.</p>
         </article>
         <article>
           <span>06</span>
-          <h3>Ownership across the lifecycle</h3>
-          <p>Requirements, implementation, API contracts, database changes, testing, deployment, monitoring-minded handoff, and iteration.</p>
+          <h3>Ownership after launch</h3>
+          <p>Requirements, implementation, API contracts, database changes, testing, deployment, debugging, and practical iteration once real users touch the feature.</p>
         </article>
       </div>
     </section>
@@ -326,8 +333,8 @@ import Layout from "../layouts/Layout.astro";
 
       <div class="project-grid">
         <article class="project-card">
-          <div class="project-preview game-preview" aria-hidden="true">
-            <i></i><i></i><i></i>
+          <div class="project-preview screenshot-preview">
+            <img src="/projects/cinequiz.png" alt="CineQuiz game interface screenshot" loading="lazy" />
           </div>
           <span>React · TypeScript · Redux Toolkit</span>
           <h3>CineQuiz</h3>
@@ -338,8 +345,8 @@ import Layout from "../layouts/Layout.astro";
           </div>
         </article>
         <article class="project-card">
-          <div class="project-preview library-preview" aria-hidden="true">
-            <i></i><i></i><i></i><i></i>
+          <div class="project-preview screenshot-preview">
+            <img src="/projects/essentialui.png" alt="EssentialUI component documentation screenshot" loading="lazy" />
           </div>
           <span>React library · Component docs · Vite</span>
           <h3>EssentialUI</h3>
@@ -362,9 +369,9 @@ import Layout from "../layouts/Layout.astro";
 
     <section class="contact" id="contact">
       <p class="eyebrow">Let’s talk</p>
-      <h2>Looking for a full-stack engineer who can own the path to production?</h2>
+      <h2>Need a full-stack engineer who can take features past the finish line?</h2>
       <p>
-        I’m open to full-stack and frontend opportunities where user experience, APIs, and dependable delivery matter.
+        I’m open to full-stack and frontend-heavy roles where product thinking, backend follow-through, testing, and reliable releases all matter.
       </p>
       <div class="hero-actions center">
         <a class="button primary" href="mailto:maninderjit.johar@outlook.com">Email me</a>
