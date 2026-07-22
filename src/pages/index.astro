@@ -15,9 +15,8 @@ import Layout from "../layouts/Layout.astro";
         <a href="#contact">Contact</a>
       </div>
       <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-menu">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
+        <span class="menu-glyph" aria-hidden="true">⌘</span>
+        <span class="menu-label">Menu</span>
       </button>
       <button class="theme-toggle" type="button" aria-label="Switch between day and night theme" aria-pressed="false">
         <span class="theme-icon sun" aria-hidden="true">☀</span>
@@ -25,10 +24,10 @@ import Layout from "../layouts/Layout.astro";
         <span class="theme-thumb" aria-hidden="true"></span>
       </button>
       <div class="mobile-menu" id="primary-menu">
-        <a href="#work">Work</a>
-        <a href="#systems">Systems</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+        <a href="#work"><span aria-hidden="true">01</span>Work</a>
+        <a href="#systems"><span aria-hidden="true">02</span>Systems</a>
+        <a href="#projects"><span aria-hidden="true">03</span>Projects</a>
+        <a href="#contact"><span aria-hidden="true">@</span>Contact</a>
       </div>
     </nav>
 
