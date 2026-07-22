@@ -7,23 +7,34 @@ import Layout from "../layouts/Layout.astro";
   <main class="portfolio">
     <div class="scroll-progress" aria-hidden="true"></div>
     <nav class="nav" aria-label="Primary navigation">
-      <a class="brand" href="#home">MJ</a>
+      <a class="brand" href="#home">Maninderjit Johar</a>
       <div class="nav-links">
         <a href="#work">Work</a>
         <a href="#systems">Systems</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
       </div>
+      <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-menu">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </button>
       <button class="theme-toggle" type="button" aria-label="Switch between day and night theme" aria-pressed="false">
         <span class="theme-icon sun" aria-hidden="true">☀</span>
         <span class="theme-icon moon" aria-hidden="true">☾</span>
         <span class="theme-thumb" aria-hidden="true"></span>
       </button>
+      <div class="mobile-menu" id="primary-menu">
+        <a href="#work">Work</a>
+        <a href="#systems">Systems</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
     </nav>
 
     <section class="hero" id="home">
       <div class="hero-copy">
-        <p class="eyebrow">Maninderjit Johar · Full-stack engineer</p>
+        <p class="eyebrow">Full-stack Software Developer</p>
         <h1>Full-stack product engineering, from UI to production.</h1>
         <p class="hero-text">
           7+ years building React and Next.js interfaces, backend APIs, database-backed workflows, test coverage, and Docker/Kubernetes deployments for real SaaS products.
@@ -356,14 +367,6 @@ import Layout from "../layouts/Layout.astro";
             <a href="https://github.com/maninderjit-johar/essentialui" target="_blank" rel="noreferrer">Source</a>
           </div>
         </article>
-        <a class="project-card" href="https://github.com/maninderjit-johar/aspirearc" target="_blank" rel="noreferrer">
-          <div class="project-preview app-preview" aria-hidden="true">
-            <i></i><i></i><i></i>
-          </div>
-          <span>Next.js · Prisma · PostgreSQL · Docker</span>
-          <h3>AspireArc</h3>
-          <p>Full-stack fitness logger with relational workout history and Docker-based local infrastructure.</p>
-        </a>
       </div>
     </section>
 
@@ -392,8 +395,11 @@ import Layout from "../layouts/Layout.astro";
   );
   const countTargets = document.querySelectorAll("[data-count]");
   const navLinks = document.querySelectorAll(".nav-links a");
+  const mobileNavLinks = document.querySelectorAll(".mobile-menu a");
   const sections = [...document.querySelectorAll("section[id]")];
   const themeToggle = document.querySelector(".theme-toggle");
+  const menuToggle = document.querySelector(".menu-toggle");
+  const mobileMenu = document.querySelector(".mobile-menu");
 
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -432,10 +438,33 @@ import Layout from "../layouts/Layout.astro";
       }))
       .sort((a, b) => a.top - b.top)[0];
 
-    navLinks.forEach((link) => {
+    [...navLinks, ...mobileNavLinks].forEach((link) => {
       link.toggleAttribute("aria-current", link.getAttribute("href") === `#${active?.id}`);
     });
   };
+
+  const closeMobileMenu = () => {
+    menuToggle?.setAttribute("aria-expanded", "false");
+    mobileMenu?.classList.remove("is-open");
+  };
+
+  menuToggle?.addEventListener("click", () => {
+    const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
+    menuToggle.setAttribute("aria-expanded", String(!isOpen));
+    mobileMenu?.classList.toggle("is-open", !isOpen);
+  });
+
+  mobileNavLinks.forEach((link) => {
+    link.addEventListener("click", closeMobileMenu);
+  });
+
+  window.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeMobileMenu();
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 920) closeMobileMenu();
+  });
 
   const animateCount = (element) => {
     if (element.dataset.done === "true") return;
