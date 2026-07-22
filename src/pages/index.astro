@@ -144,25 +144,6 @@ import Layout from "../layouts/Layout.astro";
       </div>
     </div>
 
-    <section class="impact-band" aria-label="Impact metrics">
-      <article>
-        <strong data-count="100" data-suffix="+">0</strong>
-        <span>project SaaS ecosystem</span>
-      </article>
-      <article>
-        <strong data-count="10" data-suffix="+">0</strong>
-        <span>Next.js and React apps</span>
-      </article>
-      <article>
-        <strong data-count="15" data-suffix="+">0</strong>
-        <span>backend service workflows</span>
-      </article>
-      <article>
-        <strong data-count="100" data-suffix="+">0</strong>
-        <span>unit, integration, and browser tests</span>
-      </article>
-    </section>
-
     <section class="section" id="work">
       <div class="section-heading">
         <p class="eyebrow">Selected experience</p>
@@ -180,10 +161,10 @@ import Layout from "../layouts/Layout.astro";
             Rejoined Aerialytic after an earlier frontend role and moved deeper into full-stack product work across lead capture, customer workflows, proposals, admin tools, and partner-facing experiences.
           </p>
           <div class="case-stats">
-            <span><strong>100+</strong> project ecosystem</span>
-            <span><strong>10+</strong> Next.js/React apps</span>
-            <span><strong>15+</strong> backend services</span>
-            <span><strong>100+</strong> Python/API tests</span>
+            <span><strong>100+</strong> Nx workspace projects</span>
+            <span><strong>10+</strong> customer, admin, and partner surfaces</span>
+            <span><strong>15+</strong> API workflows integrated</span>
+            <span><strong>100+</strong> automated regression tests</span>
           </div>
           <ul>
             <li>Built reusable CRM flows that partners could embed without a separate one-off implementation each time.</li>
@@ -388,12 +369,11 @@ import Layout from "../layouts/Layout.astro";
 <script>
   const progress = document.querySelector(".scroll-progress");
   const revealTargets = document.querySelectorAll(
-    ".hero-copy, .hero-system, .impact-band article, .section-heading, .case-card, .stack-group, .tech-cloud span, .systems-grid article, .project-card, .contact"
+    ".hero-copy, .hero-system, .section-heading, .case-card, .stack-group, .tech-cloud span, .systems-grid article, .project-card, .contact"
   );
   const interactiveCards = document.querySelectorAll(
-    ".hero-system, .case-card, .stack-group, .tech-cloud span, .systems-grid article, .project-card, .impact-band article"
+    ".hero-system, .case-card, .stack-group, .tech-cloud span, .systems-grid article, .project-card"
   );
-  const countTargets = document.querySelectorAll("[data-count]");
   const navLinks = document.querySelectorAll(".nav-links a");
   const mobileNavLinks = document.querySelectorAll(".mobile-menu a");
   const sections = [...document.querySelectorAll("section[id]")];
@@ -466,33 +446,11 @@ import Layout from "../layouts/Layout.astro";
     if (window.innerWidth > 920) closeMobileMenu();
   });
 
-  const animateCount = (element) => {
-    if (element.dataset.done === "true") return;
-    element.dataset.done = "true";
-
-    const end = Number(element.getAttribute("data-count") || 0);
-    const suffix = element.getAttribute("data-suffix") || "";
-    const duration = prefersReducedMotion ? 1 : 900;
-    const start = performance.now();
-
-    const tick = (now) => {
-      const progressValue = Math.min((now - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - progressValue, 3);
-      element.textContent = `${Math.round(end * eased)}${suffix}`;
-      if (progressValue < 1) requestAnimationFrame(tick);
-    };
-
-    requestAnimationFrame(tick);
-  };
-
   const revealObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (!entry.isIntersecting) return;
         entry.target.classList.add("is-visible");
-        if (entry.target instanceof HTMLElement && entry.target.matches("[data-count]")) {
-          animateCount(entry.target);
-        }
       });
     },
     { threshold: 0.18 }
@@ -502,8 +460,6 @@ import Layout from "../layouts/Layout.astro";
     target.classList.add("reveal");
     revealObserver.observe(target);
   });
-
-  countTargets.forEach((target) => revealObserver.observe(target));
 
   requestAnimationFrame(() => {
     revealTargets.forEach((target) => {

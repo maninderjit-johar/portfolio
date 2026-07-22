@@ -344,7 +344,6 @@ li + li {
 
 .hero,
 .section,
-.impact-band,
 .contact {
   width: min(1120px, calc(100% - 2rem));
   margin: 0 auto;
@@ -452,8 +451,7 @@ h3 {
 .case-card,
 .stack-group,
 .systems-grid article,
-.project-card,
-.impact-band article {
+.project-card {
   position: relative;
   overflow: hidden;
   border: 1px solid var(--line);
@@ -472,8 +470,7 @@ h3 {
 .case-card::before,
 .stack-group::before,
 .systems-grid article::before,
-.project-card::before,
-.impact-band article::before {
+.project-card::before {
   position: absolute;
   inset: -1px;
   z-index: -1;
@@ -488,8 +485,7 @@ h3 {
 .case-card::after,
 .stack-group::after,
 .systems-grid article::after,
-.project-card::after,
-.impact-band article::after {
+.project-card::after {
   position: absolute;
   inset: 0;
   background: radial-gradient(
@@ -507,8 +503,7 @@ h3 {
 .case-card:hover,
 .stack-group:hover,
 .systems-grid article:hover,
-.project-card:hover,
-.impact-band article:hover {
+.project-card:hover {
   border-color: color-mix(in srgb, var(--accent-2) 42%, transparent);
   box-shadow: 0 32px 90px rgba(0, 0, 0, 0.34);
 }
@@ -517,8 +512,7 @@ h3 {
 .case-card:hover::after,
 .stack-group:hover::after,
 .systems-grid article:hover::after,
-.project-card:hover::after,
-.impact-band article:hover::after {
+.project-card:hover::after {
   opacity: 1;
 }
 
@@ -1096,7 +1090,6 @@ h3 {
 }
 
 .proof-grid span,
-.impact-band article,
 .case-stats span {
   border: 1px solid color-mix(in srgb, var(--text) 11%, transparent);
   border-radius: 8px;
@@ -1106,7 +1099,6 @@ h3 {
 }
 
 .proof-grid strong,
-.impact-band strong,
 .case-stats strong {
   display: block;
   color: var(--text);
@@ -1139,28 +1131,6 @@ h3 {
   font-size: 0.88rem;
   font-weight: 800;
   padding: 0.55rem 0.85rem;
-}
-
-.impact-band {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1rem;
-  padding: 1rem 0 3.75rem;
-}
-
-.impact-band article {
-  min-height: 9rem;
-}
-
-.impact-band strong {
-  color: var(--accent-2);
-  font-size: 3rem;
-}
-
-.impact-band span {
-  display: block;
-  margin-top: 0.9rem;
-  color: var(--muted);
 }
 
 .section {
@@ -1650,7 +1620,6 @@ h3 {
     left: -2.42rem;
   }
 
-  .impact-band,
   .case-stats {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1683,7 +1652,6 @@ h3 {
 
   .hero,
   .section,
-  .impact-band,
   .contact {
     width: min(100% - 1.2rem, 1120px);
   }
@@ -1692,7 +1660,6 @@ h3 {
     font-size: clamp(2.9rem, 13vw, 4.2rem);
   }
 
-  .impact-band,
   .case-stats,
   .case-stats.compact,
   .proof-grid {
@@ -1859,8 +1826,7 @@ h3 {
   .case-card,
   .stack-group,
   .systems-grid article,
-  .project-card,
-  .impact-band article {
+  .project-card {
     transition: none;
   }
 
